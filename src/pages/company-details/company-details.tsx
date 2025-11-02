@@ -1,4 +1,5 @@
 import type { FC } from "react";
+
 import "./company-details.css";
 
 const Details: FC = () => {

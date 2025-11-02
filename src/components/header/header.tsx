@@ -1,15 +1,17 @@
 import { useState } from "react";
 import type { FC } from "react";
-import { RequestModal } from "../request-modal";
+
 import { CallModal } from "../call-modal";
+import { RequestModal } from "../request-modal";
+
 import "./header.css";
+import iconCallSrc from "./call-icon.svg";
+import iconEmailSrc from "./email-icon.svg";
 import logoSrc from "./logo.png";
 import iconPhoneSrc from "./phone-icon.svg";
-import iconSmartphoneSrc from "./smartphone-icon.svg";
-import iconEmailSrc from "./email-icon.svg";
 import iconPriceSrc from "./price-icon.svg";
 import iconRequestSrc from "./request-icon.svg";
-import iconCallSrc from "./call-icon.svg";
+import iconSmartphoneSrc from "./smartphone-icon.svg";
 
 const Header: FC = () => {
   const [isRequestModalOpen, setRequestModalOpen] = useState(false);

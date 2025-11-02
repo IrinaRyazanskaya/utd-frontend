@@ -1,4 +1,5 @@
 import type { FC } from "react";
+
 import "./divider.css";
 
 const Divider: FC = () => {

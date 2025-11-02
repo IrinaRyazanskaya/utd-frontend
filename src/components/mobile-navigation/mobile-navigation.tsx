@@ -1,7 +1,9 @@
 import { useState } from "react";
 import type { ChangeEvent, FC } from "react";
 import { Link } from "react-router-dom";
+
 import { freezeScroll, unfreezeScroll } from "../../utils/scroll";
+
 import "./mobile-navigation.css";
 import mobileLogoSrc from "./mobile-logo.png";
 

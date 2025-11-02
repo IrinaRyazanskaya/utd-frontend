@@ -1,5 +1,6 @@
-import { Map, Placemark, GeolocationControl, ZoomControl } from "react-yandex-maps";
 import type { FC } from "react";
+import { Map, Placemark, GeolocationControl, ZoomControl } from "react-yandex-maps";
+
 import "./contacts.css";
 
 const Contacts: FC = () => {

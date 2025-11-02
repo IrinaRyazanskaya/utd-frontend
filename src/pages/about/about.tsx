@@ -1,4 +1,5 @@
 import type { FC } from "react";
+
 import "./about.css";
 
 const About: FC = () => {

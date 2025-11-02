@@ -1,16 +1,17 @@
-import { HashLink } from "react-router-hash-link";
 import type { FC } from "react";
+import { HashLink } from "react-router-hash-link";
+
 import "./delivery.css";
-import iconMapSrc from "./map-icon.svg";
-import iconTruckSrc from "./truck-icon.svg";
-import iconRubleSrc from "./ruble-icon.svg";
+import cardIconArrow from "./arrow-icon.svg";
+import cardIconBoxSrc from "./box-icon.svg";
 import iconClockSrc from "./clock-icon.svg";
 import iconManagerSrc from "./manager-icon.svg";
+import iconMapSrc from "./map-icon.svg";
+import cardIconRequestSrc from "./request-icon.svg";
+import iconRubleSrc from "./ruble-icon.svg";
 import cardIconManagerSrc from "./second-manager-icon.svg";
 import cardIconTruckSrc from "./second-truck-icon.svg";
-import cardIconRequestSrc from "./request-icon.svg";
-import cardIconBoxSrc from "./box-icon.svg";
-import cardIconArrow from "./arrow-icon.svg";
+import iconTruckSrc from "./truck-icon.svg";
 
 const Delivery: FC = () => {
   return (

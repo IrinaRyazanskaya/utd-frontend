@@ -1,16 +1,18 @@
 import { useState } from "react";
 import type { FC } from "react";
-import { RequestModal } from "../request-modal";
-import { CallModal } from "../call-modal";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+
+import { CallModal } from "../call-modal";
+import { RequestModal } from "../request-modal";
+
 import "./footer.css";
+import iconCallSrc from "./call-icon.svg";
+import iconEmailSrc from "./email-icon.svg";
+import iconPhoneSrc from "./phone-icon.svg";
+import iconPlaceholderSrc from "./placeholder-icon.svg";
 import iconPriceSrc from "./price-icon.svg";
 import iconRequestSrc from "./request-icon.svg";
-import iconCallSrc from "./call-icon.svg";
-import iconPhoneSrc from "./phone-icon.svg";
-import iconEmailSrc from "./email-icon.svg";
-import iconPlaceholderSrc from "./placeholder-icon.svg";
 
 const Footer: FC = () => {
   const [isRequestModalOpen, setRequestModalOpen] = useState(false);

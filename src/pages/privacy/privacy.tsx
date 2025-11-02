@@ -1,4 +1,5 @@
 import type { FC } from "react";
+
 import "./privacy.css";
 
 const Privacy: FC = () => {

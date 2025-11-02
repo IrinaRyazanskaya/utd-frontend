@@ -1,5 +1,6 @@
-import { NavLink, useLocation } from "react-router-dom";
 import type { FC } from "react";
+import { NavLink, useLocation } from "react-router-dom";
+
 import "./navigation.css";
 
 const Navigation: FC = () => {

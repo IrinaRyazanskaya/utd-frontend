@@ -1,4 +1,5 @@
 import type { FC } from "react";
+
 import "./guarantees-and-return.css";
 import doc from "./Образец акта рекламации.docx";
 

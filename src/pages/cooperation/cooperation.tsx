@@ -1,8 +1,9 @@
 import type { FC } from "react";
+
 import "./cooperation.css";
 import iconDetailSrc from "./detail-icon.svg";
-import iconTruckSrc from "./truck-icon.svg";
 import iconPercentSrc from "./percent-icon.svg";
+import iconTruckSrc from "./truck-icon.svg";
 
 const Cooperation: FC = () => {
   return (

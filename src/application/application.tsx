@@ -1,19 +1,20 @@
-import { useMediaQuery } from "react-responsive";
 import type { FC } from "react";
-import { YMaps } from "react-yandex-maps";
+import { useMediaQuery } from "react-responsive";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { Navigation } from "../components/navigation";
-import { MobileNavigation } from "../components/mobile-navigation";
+import { YMaps } from "react-yandex-maps";
+
+import { Divider } from "../components/divider";
+import { Footer } from "../components/footer";
 import { Header } from "../components/header";
 import { MobileHeader } from "../components/mobile-header";
-import { Divider } from "../components/divider";
+import { MobileNavigation } from "../components/mobile-navigation";
+import { Navigation } from "../components/navigation";
 import { About } from "../pages/about";
-import { Footer } from "../components/footer";
-import { Contacts } from "../pages/contacts";
-import { Guarantees } from "../pages/guarantees-and-return";
 import { Details } from "../pages/company-details";
+import { Contacts } from "../pages/contacts";
 import { Cooperation } from "../pages/cooperation";
 import { Delivery } from "../pages/delivery-and-payment";
+import { Guarantees } from "../pages/guarantees-and-return";
 import { Home } from "../pages/home";
 import { Privacy } from "../pages/privacy";
 
