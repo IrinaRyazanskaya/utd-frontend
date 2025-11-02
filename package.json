@@ -1,6 +1,7 @@
 {
-  "name": "ural-tech-detail",
-  "description": "Сайт для компании УралТехДеталь",
+  "name": "utd-frontend",
+  "version": "1.0.0",
+  "private": true,
   "dependencies": {
     "react": "17.0.1",
     "react-dom": "17.0.1",
