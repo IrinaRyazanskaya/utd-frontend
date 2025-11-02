@@ -1,11 +1,12 @@
 {
   "name": "utd-frontend",
   "version": "1.0.0",
+  "type": "module",
   "private": true,
   "scripts": {
-    "serve": "serve -s build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "format": "prettier --write .",
     "format-check": "prettier --check .",
     "storybook": "start-storybook -p 6006 -s public",
@@ -24,10 +25,10 @@
     "@storybook/addon-essentials": "^6.0.0",
     "@storybook/addon-links": "^6.0.0",
     "@storybook/node-logger": "^6.0.0",
-    "@storybook/preset-create-react-app": "^3.0.0",
     "@storybook/react": "^6.0.0",
+    "@vitejs/plugin-react": "^5.0.0",
     "prettier": "^3.0.0",
-    "react-scripts": "^4.0.0"
+    "vite": "^7.0.0"
   },
   "browserslist": {
     "production": [
