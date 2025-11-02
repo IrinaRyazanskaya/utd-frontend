@@ -1,6 +1,6 @@
 import "./about.css";
 
-function About() {
+const About = (): JSX.Element => {
   return (
     <article className="about">
       <h2 className="about__header">О компании</h2>
@@ -68,6 +68,6 @@ function About() {
       </ul>
     </article>
   );
-}
+};
 
 export { About };

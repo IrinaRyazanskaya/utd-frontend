@@ -1,4 +1,5 @@
 import { useState } from "react";
+import type { ChangeEvent, FormEvent } from "react";
 import { applyRequest } from "../../api/apply-request";
 
 import "./request-modal.css";
@@ -6,27 +7,41 @@ import iconCrossSrc from "./cross-icon.svg";
 import iconFailureSrc from "./failure-icon.svg";
 import iconSuccessSrc from "./success-icon.svg";
 
-function RequestModal(props) {
-  const [buyerName, setBuyerName] = useState("");
-  const [buyerEmail, setBuyerEmail] = useState("");
-  const [buyerPhone, setBuyerPhone] = useState("");
-  const [comment, setComment] = useState("");
-  const [requestFile, setRequestFile] = useState(null);
-  const [requestState, setRequestState] = useState("unknown");
+type RequestState = "unknown" | "pending" | "success" | "failure";
 
-  const handleFileChange = (event) => {
-    const fileName = document.querySelector(".request-modal__file-name");
+type RequestModalProps = {
+  onClose: () => void;
+};
 
-    if (event.target.files.length === 1) {
-      fileName.innerHTML = event.target.files[0].name;
-      setRequestFile(event.target.files[0]);
-    } else {
-      fileName.innerHTML = "Файл не выбран";
-      setRequestFile(null);
+const RequestModal = ({ onClose }: RequestModalProps): JSX.Element => {
+  const [buyerName, setBuyerName] = useState<string>("");
+  const [buyerEmail, setBuyerEmail] = useState<string>("");
+  const [buyerPhone, setBuyerPhone] = useState<string>("");
+  const [comment, setComment] = useState<string>("");
+  const [requestFile, setRequestFile] = useState<File | null>(null);
+  const [requestState, setRequestState] = useState<RequestState>("unknown");
+
+  const updateFileName = (text: string) => {
+    const fileNameElement = document.querySelector<HTMLDivElement>(".request-modal__file-name");
+    if (fileNameElement) {
+      fileNameElement.textContent = text;
     }
   };
 
-  const handleFormSubmit = (event) => {
+  const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const files = event.target.files;
+    const file = files?.item(0) ?? null;
+
+    if (file) {
+      updateFileName(file.name);
+    } else {
+      updateFileName("Файл не выбран");
+    }
+
+    setRequestFile(file);
+  };
+
+  const handleFormSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setRequestState("pending");
     applyRequest(buyerName, buyerEmail, buyerPhone, comment, requestFile)
@@ -65,7 +80,7 @@ function RequestModal(props) {
           id="name"
           name="name"
           value={buyerName}
-          onChange={(event) => {
+          onChange={(event: ChangeEvent<HTMLInputElement>) => {
             setBuyerName(event.target.value);
           }}
           required
@@ -81,7 +96,7 @@ function RequestModal(props) {
           id="email"
           name="email"
           value={buyerEmail}
-          onChange={(event) => {
+          onChange={(event: ChangeEvent<HTMLInputElement>) => {
             setBuyerEmail(event.target.value);
           }}
           required
@@ -97,7 +112,7 @@ function RequestModal(props) {
           id="phone"
           name="phone"
           value={buyerPhone}
-          onChange={(event) => {
+          onChange={(event: ChangeEvent<HTMLInputElement>) => {
             setBuyerPhone(event.target.value);
           }}
           required
@@ -107,9 +122,9 @@ function RequestModal(props) {
           className="request-modal__comment"
           name="comment"
           id="comment"
-          rows="5"
+          rows={5}
           value={comment}
-          onChange={(event) => {
+          onChange={(event: ChangeEvent<HTMLTextAreaElement>) => {
             setComment(event.target.value);
           }}
         ></textarea>
@@ -174,13 +189,13 @@ function RequestModal(props) {
     <>
       <div className="request-modal-blackout" />
       <div className="request-modal">
-        <button className="request-modal__close-button" onClick={props.onClose}>
+        <button className="request-modal__close-button" onClick={onClose}>
           <img className="request-modal__close-icon" src={iconCrossSrc} alt="Иконка крестика" />
         </button>
         {content}
       </div>
     </>
   );
-}
+};
 
 export { RequestModal };

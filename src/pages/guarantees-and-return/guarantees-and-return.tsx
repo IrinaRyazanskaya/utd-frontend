@@ -1,7 +1,7 @@
 import "./guarantees-and-return.css";
 import doc from "./Образец акта рекламации.docx";
 
-function Guarantees() {
+const Guarantees = (): JSX.Element => {
   return (
     <article className="guarantees">
       <h2 className="guarantees__header">Гарантии</h2>
@@ -71,6 +71,6 @@ function Guarantees() {
       </a>
     </article>
   );
-}
+};
 
 export { Guarantees };

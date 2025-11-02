@@ -1,4 +1,5 @@
 import { useState } from "react";
+import type { ChangeEvent, FormEvent } from "react";
 import { orderCall } from "../../api/order-call";
 
 import "./call-modal.css";
@@ -6,12 +7,18 @@ import iconCrossSrc from "./cross-icon.svg";
 import iconFailureSrc from "./failure-icon.svg";
 import iconSuccessSrc from "./success-icon.svg";
 
-function CallModal(props) {
-  const [buyerName, setBuyerName] = useState("");
-  const [buyerPhone, setBuyerPhone] = useState("");
-  const [requestState, setRequestState] = useState("unknown");
+type RequestState = "unknown" | "pending" | "success" | "failure";
 
-  const handleFormSubmit = (event) => {
+type CallModalProps = {
+  onClose: () => void;
+};
+
+const CallModal = ({ onClose }: CallModalProps): JSX.Element => {
+  const [buyerName, setBuyerName] = useState<string>("");
+  const [buyerPhone, setBuyerPhone] = useState<string>("");
+  const [requestState, setRequestState] = useState<RequestState>("unknown");
+
+  const handleFormSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setRequestState("pending");
     orderCall(buyerName, buyerPhone)
@@ -37,7 +44,7 @@ function CallModal(props) {
           id="name"
           name="name"
           value={buyerName}
-          onChange={(event) => {
+          onChange={(event: ChangeEvent<HTMLInputElement>) => {
             setBuyerName(event.target.value);
           }}
           required
@@ -53,7 +60,7 @@ function CallModal(props) {
           id="phone"
           name="phone"
           value={buyerPhone}
-          onChange={(event) => {
+          onChange={(event: ChangeEvent<HTMLInputElement>) => {
             setBuyerPhone(event.target.value);
           }}
           required
@@ -119,13 +126,13 @@ function CallModal(props) {
     <>
       <div className="call-modal-blackout" />
       <div className="call-modal">
-        <button className="call-modal__close-button" onClick={props.onClose}>
+        <button className="call-modal__close-button" onClick={onClose}>
           <img className="call-modal__close-icon" src={iconCrossSrc} alt="Иконка крестика" />
         </button>
         {content}
       </div>
     </>
   );
-}
+};
 
 export { CallModal };

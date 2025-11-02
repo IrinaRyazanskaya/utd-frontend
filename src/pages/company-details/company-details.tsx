@@ -1,6 +1,6 @@
 import "./company-details.css";
 
-function Details() {
+const Details = (): JSX.Element => {
   return (
     <article className="details">
       <h2 className="details__header">Реквизиты компании</h2>
@@ -78,6 +78,6 @@ function Details() {
       <strong className="details__fact">Организация является плательщиком НДС.</strong>
     </article>
   );
-}
+};
 
 export { Details };

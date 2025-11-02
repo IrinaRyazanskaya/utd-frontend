@@ -2,7 +2,7 @@ import { useState } from "react";
 import { HashLink } from "react-router-hash-link";
 import { Divider } from "../../components/divider";
 import { RequestModal } from "../../components/request-modal";
-import { CallModal } from "../../components/call-modal/call-modal";
+import { CallModal } from "../../components/call-modal";
 import "./home.css";
 import iconCallSrc from "./call-icon.svg";
 import iconDetailSrc from "./detail-icon.svg";
@@ -15,7 +15,7 @@ import iconRequestSrc from "./request-icon.svg";
 import iconTrophySrc from "./trophy-icon.svg";
 import iconTruckSrc from "./truck-icon.svg";
 
-function Home() {
+const Home = (): JSX.Element => {
   const [isRequestModalOpen, setRequestModalOpen] = useState(false);
 
   const handleRequestClick = () => {
@@ -169,6 +169,6 @@ function Home() {
       </section>
     </article>
   );
-}
+};
 
 export { Home };

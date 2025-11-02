@@ -11,7 +11,7 @@ import cardIconRequestSrc from "./request-icon.svg";
 import cardIconBoxSrc from "./box-icon.svg";
 import cardIconArrow from "./arrow-icon.svg";
 
-function Delivery() {
+const Delivery = (): JSX.Element => {
   return (
     <article className="delivery">
       <h2 className="delivery__header">Доставка запчастей</h2>
@@ -238,6 +238,6 @@ function Delivery() {
       </div>
     </article>
   );
-}
+};
 
 export { Delivery };

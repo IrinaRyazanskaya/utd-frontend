@@ -16,7 +16,7 @@ import { Delivery } from "../pages/delivery-and-payment";
 import { Home } from "../pages/home";
 import { Privacy } from "../pages/privacy";
 
-function Application() {
+const Application = (): JSX.Element => {
   const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
 
   return (
@@ -55,6 +55,6 @@ function Application() {
       </BrowserRouter>
     </YMaps>
   );
-}
+};
 
 export { Application };

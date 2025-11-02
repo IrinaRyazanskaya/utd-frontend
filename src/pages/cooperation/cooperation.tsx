@@ -3,7 +3,7 @@ import iconDetailSrc from "./detail-icon.svg";
 import iconTruckSrc from "./truck-icon.svg";
 import iconPercentSrc from "./percent-icon.svg";
 
-function Cooperation() {
+const Cooperation = (): JSX.Element => {
   return (
     <article className="cooperation">
       <h2 className="cooperation__header">Сотрудничество</h2>
@@ -56,6 +56,6 @@ function Cooperation() {
       </p>
     </article>
   );
-}
+};
 
 export { Cooperation };

@@ -1,6 +1,6 @@
 import "./privacy.css";
 
-function Privacy() {
+const Privacy = (): JSX.Element => {
   return (
     <article className="privacy">
       <h2 className="privacy__header">Политика конфиденциальности</h2>
@@ -236,6 +236,6 @@ function Privacy() {
       </ol>
     </article>
   );
-}
+};
 
 export { Privacy };

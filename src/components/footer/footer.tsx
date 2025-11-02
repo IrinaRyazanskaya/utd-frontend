@@ -11,7 +11,7 @@ import iconPhoneSrc from "./phone-icon.svg";
 import iconEmailSrc from "./email-icon.svg";
 import iconPlaceholderSrc from "./placeholder-icon.svg";
 
-function Footer() {
+const Footer = (): JSX.Element => {
   const [isRequestModalOpen, setRequestModalOpen] = useState(false);
 
   const handleRequestClick = () => {
@@ -124,6 +124,6 @@ function Footer() {
       </div>
     </footer>
   );
-}
+};
 
 export { Footer };

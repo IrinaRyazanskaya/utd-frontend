@@ -1,7 +1,7 @@
 import "./divider.css";
 
-function Divider() {
+const Divider = (): JSX.Element => {
   return <div className="divider"></div>;
-}
+};
 
 export { Divider };

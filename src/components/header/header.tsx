@@ -10,7 +10,7 @@ import iconPriceSrc from "./price-icon.svg";
 import iconRequestSrc from "./request-icon.svg";
 import iconCallSrc from "./call-icon.svg";
 
-function Header() {
+const Header = (): JSX.Element => {
   const [isRequestModalOpen, setRequestModalOpen] = useState(false);
 
   const handleRequestClick = () => {
@@ -97,6 +97,6 @@ function Header() {
       </div>
     </header>
   );
-}
+};
 
 export { Header };

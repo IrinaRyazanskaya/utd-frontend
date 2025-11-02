@@ -1,20 +1,23 @@
-import { useRef } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import "./navigation.css";
 
-function Navigation() {
+const Navigation = (): JSX.Element => {
   const location = useLocation();
-  const customerPaths = ["/delivery", "/guarantees", "/details"];
+  const customerPaths: readonly string[] = ["/delivery", "/guarantees", "/details"];
   const isCustomerPath = customerPaths.some((path) => path === location.pathname);
   const customerTriggerClass = isCustomerPath ? "navigation__trigger-content_active" : "";
 
   const handleMenuMouseEnter = () => {
-    const menu = document.querySelector(".navigation__sub-menu-container");
-    menu.open = true;
+    const menu = document.querySelector<HTMLDetailsElement>(".navigation__sub-menu-container");
+    if (menu) {
+      menu.open = true;
+    }
   };
   const handleMenuMouseLeave = () => {
-    const menu = document.querySelector(".navigation__sub-menu-container");
-    menu.open = false;
+    const menu = document.querySelector<HTMLDetailsElement>(".navigation__sub-menu-container");
+    if (menu) {
+      menu.open = false;
+    }
   };
 
   return (
@@ -110,6 +113,6 @@ function Navigation() {
       </ul>
     </nav>
   );
-}
+};
 
 export { Navigation };

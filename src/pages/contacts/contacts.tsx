@@ -1,10 +1,9 @@
-import { Map } from "react-yandex-maps";
-import { Placemark } from "react-yandex-maps";
-import { GeolocationControl } from "react-yandex-maps";
-import { ZoomControl } from "react-yandex-maps";
+import { Map, Placemark, GeolocationControl, ZoomControl } from "react-yandex-maps";
 import "./contacts.css";
 
-function Contacts() {
+const Contacts = (): JSX.Element => {
+  const officeLocation: [number, number] = [55.105233, 60.133198];
+
   return (
     <article className="contacts">
       <h2 className="contacts__header">Контакты компании ООО&nbsp;ТД&nbsp;«УралТехДеталь»</h2>
@@ -57,14 +56,14 @@ function Contacts() {
       </div>
       <strong className="contacts__label-map">Схема проезда</strong>
       <div className="contacts__map-container">
-        <Map className="contacts__map" defaultState={{ center: [55.105233, 60.133198], zoom: 17 }}>
-          <Placemark geometry={[55.105233, 60.133198]} />
+        <Map className="contacts__map" defaultState={{ center: officeLocation, zoom: 17 }}>
+          <Placemark geometry={officeLocation} />
           <GeolocationControl options={{ float: "left" }} />
           <ZoomControl options={{ float: "right" }} />
         </Map>
       </div>
     </article>
   );
-}
+};
 
 export { Contacts };
