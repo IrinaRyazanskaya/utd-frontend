@@ -4,8 +4,8 @@
 }
 
 .contacts__header {
-  font-size: 30px;
   margin-bottom: 16px;
+  font-size: 30px;
 }
 
 .contacts__container {
@@ -34,7 +34,7 @@
 }
 
 .contacts__opening-hours-list {
-  margin: 6px 0 16px 0;
+  margin: 6px 0 16px;
   padding-left: 17px;
 }
 
@@ -55,7 +55,7 @@
   height: 450px;
 }
 
-@media (max-width: 767px) {
+@media (width <= 767px) {
   .contacts {
     margin: 0 16px;
     font-size: 14px;
@@ -70,8 +70,8 @@
   }
 
   .contacts__header {
-    font-size: 22px;
     margin-bottom: 16px;
+    font-size: 22px;
   }
 
   .contacts__map {
@@ -80,7 +80,7 @@
   }
 }
 
-@media (max-width: 380px) {
+@media (width <= 380px) {
   .contacts__map {
     width: 290px;
     height: 230px;

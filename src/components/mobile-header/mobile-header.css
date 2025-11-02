@@ -45,20 +45,20 @@
 }
 
 .mobile-header__action-button {
-  background-color: transparent;
-  border: none;
   padding: 0;
+  border: none;
+  background-color: transparent;
   outline: none;
 }
 
-@media (max-width: 648px) {
+@media (width <= 648px) {
   .mobile-header__contacts,
   .mobile-header__actions {
     margin: 12px 16px;
   }
 }
 
-@media (max-width: 568px) {
+@media (width <= 568px) {
   .mobile-header__phone-number,
   .mobile-header__email-address,
   .mobile-header__action-link,
@@ -73,7 +73,7 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (width <= 500px) {
   .mobile-header__phone-number,
   .mobile-header__email-address,
   .mobile-header__action-link,
@@ -88,7 +88,7 @@
   }
 }
 
-@media (max-width: 460px) {
+@media (width <= 460px) {
   .mobile-header__contacts,
   .mobile-header__actions {
     margin: 12px 14px;
@@ -116,7 +116,7 @@
   }
 }
 
-@media (max-width: 400px) {
+@media (width <= 400px) {
   .mobile-header__contacts,
   .mobile-header__actions {
     margin: 12px 8px;
@@ -133,7 +133,7 @@
   }
 }
 
-@media (max-width: 370px) {
+@media (width <= 370px) {
   .mobile-header__phone-number,
   .mobile-header__email-address,
   .mobile-header__action-link,

@@ -6,9 +6,9 @@
 }
 
 .mobile-navigation__logo-image {
+  height: 44px;
   margin: auto;
   padding: 3px;
-  height: 44px;
 }
 
 .burger-menu__check {
@@ -16,17 +16,19 @@
 }
 
 .burger-menu {
-  display: flex;
   position: absolute;
   z-index: 1;
+  display: flex;
 }
 
 .burger-menu__bar {
   width: 30px;
   height: 5px;
-  background-color: #fff;
   margin: 6px 16px;
   border-radius: 4px;
+
+  background-color: #fff;
+
   transition: all 0.4s ease-in-out;
 }
 
@@ -43,9 +45,9 @@
 }
 
 .mobile-navigation__menu-list {
-  list-style: none;
   font-size: 30px;
   font-weight: bold;
+  list-style: none;
 }
 
 .mobile-navigation__link {
@@ -54,24 +56,28 @@
 }
 
 .mobile-navigation__menu-list {
-  display: block;
   position: fixed;
-  visibility: hidden;
   top: 0;
   left: -100%;
-  margin: 0;
-  padding: 50px 0;
+
+  display: block;
+
   width: 100vw;
   height: 100vh;
+  margin: 0;
+  padding: 50px 0;
+
+  visibility: hidden;
   background-color: #004578;
-  box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 0 6px rgb(0 0 0 / 20%);
+
   transition-duration: 0.4s;
 }
 
 .mobile-navigation__menu-list_open {
-  visibility: visible;
   top: 0;
   left: 0;
+  visibility: visible;
 }
 
 .mobile-navigation__menu-item {

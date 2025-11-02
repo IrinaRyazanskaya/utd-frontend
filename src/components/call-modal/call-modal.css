@@ -1,11 +1,8 @@
 .call-modal-blackout {
   position: fixed;
   z-index: 1000;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.2);
+  inset: 0;
+  background-color: rgb(0 0 0 / 20%);
 }
 
 .call-modal {
@@ -13,33 +10,39 @@
   z-index: 1001;
   top: 49%;
   left: 50%;
+
   width: 600px;
   height: 424px;
   margin-top: -212px;
   margin-left: -300px;
   padding-top: 16px;
-  font-family: "Arial", sans-serif;
+
+  font-family: Arial, sans-serif;
   color: #3e4b5b;
+
   background-color: #fff;
-  box-shadow: 0px 0px 14px 2px rgba(62, 75, 91, 0.2);
+  box-shadow: 0 0 14px 2px rgb(62 75 91 / 20%);
 }
 
 .call-modal__close-button {
+  cursor: pointer;
+
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin: 0 16px 0 auto;
-  padding: 0;
+  justify-content: center;
+
   width: 30px;
   height: 30px;
-  background-color: rgb(196, 196, 196, 0.8);
-  border-radius: 50%;
+  margin: 0 16px 0 auto;
+  padding: 0;
   border: none;
-  cursor: pointer;
+  border-radius: 50%;
+
+  background-color: rgb(196 196 196 / 80%);
 }
 
 .call-modal__close-button:hover {
-  background-color: rgb(196, 196, 196, 0.5);
+  background-color: rgb(196 196 196 / 50%);
 }
 
 .call-modal__close-button:focus {
@@ -48,9 +51,9 @@
 
 .call-modal__header {
   width: 244px;
+  margin: 8px auto 34px;
   font-size: 30px;
   font-weight: bold;
-  margin: 8px auto 34px auto;
 }
 
 .call-modal__form {
@@ -59,20 +62,22 @@
 }
 
 .call-modal__field {
-  margin: 10px 0;
-  padding-left: 10px;
   width: 446px;
   height: 28px;
-  color: #3e4b5b;
-  background-color: rgba(196, 196, 196, 0.1);
-  border: 1px solid rgba(196, 196, 196, 0.7);
+  margin: 10px 0;
+  padding-left: 10px;
+  border: 1px solid rgb(196 196 196 / 70%);
   border-radius: 2px;
-  -webkit-appearance: none;
+
+  color: #3e4b5b;
+
+  appearance: none;
+  background-color: rgb(196 196 196 / 10%);
 }
 
 .call-modal__field:active,
 .call-modal__field:focus {
-  border-color: rgba(0, 90, 158, 0.7);
+  border-color: rgb(0 90 158 / 70%);
   outline: none;
 }
 
@@ -81,7 +86,7 @@
 }
 
 .call-modal__form-text {
-  margin: 14px 0 24px 0;
+  margin: 14px 0 24px;
 }
 
 .call-modal__form-link {
@@ -94,22 +99,25 @@
 }
 
 .call-modal__button-container {
-  margin: 0 auto;
   width: 142px;
+  margin: 0 auto;
 }
 
 .call-modal__send-button,
 .call-modal__failure-button {
-  font-size: 18px;
-  line-height: 22px;
-  color: #fff;
-  font-weight: bold;
-  background-color: #004578;
+  cursor: pointer;
+
   border: none;
   border-radius: 4px;
-  cursor: pointer;
+
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 22px;
+  color: #fff;
+
+  appearance: none;
+  background-color: #004578;
   outline: none;
-  -webkit-appearance: none;
 }
 
 .call-modal__send-button {
@@ -124,7 +132,7 @@
 
 .call-modal__send-button:hover,
 .call-modal__failure-button:hover {
-  background-color: rgba(0, 69, 120, 0.7);
+  background-color: rgb(0 69 120 / 70%);
 }
 
 .call-modal__failure,
@@ -133,6 +141,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
   font-size: 26px;
   text-align: center;
 }
@@ -156,11 +165,12 @@
 }
 
 .call-modal__loader {
+  width: 120px;
+  height: 120px;
   border: 16px solid #004578;
   border-top: 16px solid #fff;
   border-radius: 50%;
-  width: 120px;
-  height: 120px;
+
   animation: spin 2.5s linear infinite;
 }
 
@@ -168,12 +178,13 @@
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
 }
 
-@media (max-width: 767px) {
+@media (width <= 767px) {
   .call-modal {
     width: 290px;
     height: 310px;
@@ -183,9 +194,9 @@
   }
 
   .call-modal__close-button {
-    margin-right: 10px;
     width: 22px;
     height: 22px;
+    margin-right: 10px;
   }
 
   .call-modal__close-icon {
@@ -194,8 +205,8 @@
 
   .call-modal__header {
     width: 180px;
+    margin: 6px auto 20px;
     font-size: 22px;
-    margin: 6px auto 20px auto;
   }
 
   .call-modal__form {
@@ -207,14 +218,14 @@
   }
 
   .call-modal__field {
-    margin: 6px 0;
-    padding-left: 4px;
     width: 232px;
     height: 18px;
+    margin: 6px 0;
+    padding-left: 4px;
   }
 
   .call-modal__form-text {
-    margin: 12px 0 12px 0;
+    margin: 12px 0;
     font-size: 10px;
     line-height: 12px;
   }
@@ -230,9 +241,10 @@
   .call-modal__send-button {
     width: 108px;
     height: 36px;
-    font-size: 14px;
     padding: 2px 4px;
     border-radius: 4px;
+
+    font-size: 14px;
   }
 
   .call-modal__failure,

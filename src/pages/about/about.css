@@ -1,11 +1,11 @@
 .about {
-  color: #3e4b5b;
   margin: 0 40px;
   padding-top: 16px;
+  color: #3e4b5b;
 }
 
 .about__header {
-  margin: 20px 0 16px 0;
+  margin: 20px 0 16px;
   font-size: 30px;
   font-weight: bold;
 }
@@ -20,20 +20,20 @@
 }
 
 .about__fact {
+  margin-left: 19px;
   font-size: 18px;
   font-weight: bold;
   line-height: 20px;
-  margin-left: 19px;
 }
 
 .about__fact-text {
+  margin-left: -18px;
   font-size: 16px;
   font-weight: normal;
   line-height: 30px;
-  margin-left: -18px;
 }
 
-@media (max-width: 450px) {
+@media (width <= 450px) {
   .about {
     margin: 0 16px;
   }

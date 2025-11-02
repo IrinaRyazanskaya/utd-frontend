@@ -1,7 +1,7 @@
 .delivery {
-  color: #3e4b5b;
   margin: 0 40px;
   padding-top: 16px;
+  color: #3e4b5b;
 }
 
 .delivery__header {
@@ -25,8 +25,8 @@
 }
 
 .delivery__advantages {
-  margin: 0 30px 0 12px;
   width: 244px;
+  margin: 0 30px 0 12px;
 }
 
 .delivery__advantages-long {
@@ -71,28 +71,33 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
+
   width: 160px;
   height: 36px;
+  margin-top: 20px;
   border: 1px solid #004578;
   border-radius: 2px;
+
   line-height: 15px;
   color: #004578;
   text-decoration: none;
 }
 
 .delivery__button-link:hover {
-  border-color: rgba(0, 69, 120, 0.7);
-  color: rgba(0, 69, 120, 0.7);
+  border-color: rgb(0 69 120 / 70%);
+  color: rgb(0 69 120 / 70%);
 }
 
 .delivery__card {
   justify-content: center;
+
   width: 236px;
   height: 134px;
   border-radius: 12px;
-  background-color: #deecf9;
+
   font-size: 14px;
+
+  background-color: #deecf9;
 }
 
 .delivery__card-text {
@@ -104,7 +109,7 @@
   margin: 0 4px;
 }
 
-@media (max-width: 1142px) {
+@media (width <= 1142px) {
   .delivery__advantages {
     width: 216px;
     font-size: 14px;
@@ -120,7 +125,7 @@
   }
 }
 
-@media (max-width: 1023px) {
+@media (width <= 1023px) {
   .delivery {
     margin: 0 30px;
   }
@@ -147,7 +152,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (width <= 767px) {
   .delivery {
     margin: 0 16px;
     padding-top: 16px;
@@ -198,7 +203,7 @@
   }
 }
 
-@media (max-width: 384px) {
+@media (width <= 384px) {
   .delivery__companies-list {
     font-size: 14px;
     line-height: 18px;

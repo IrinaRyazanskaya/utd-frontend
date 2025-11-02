@@ -5,7 +5,7 @@
 }
 
 .privacy__header {
-  margin: 30px 0 16px 0;
+  margin: 30px 0 16px;
   font-size: 30px;
 }
 
@@ -34,14 +34,14 @@
   margin: 8px 0;
 }
 
-@media (max-width: 450px) {
+@media (width <= 450px) {
   .privacy {
     margin: 0 16px;
     font-size: 14px;
   }
 
   .privacy__header {
-    margin: 16px 0 0 0;
+    margin: 16px 0 0;
     font-size: 22px;
     line-height: 26px;
   }

@@ -5,7 +5,7 @@
 }
 
 .guarantees__header {
-  margin: 30px 0 16px 0;
+  margin: 30px 0 16px;
   font-size: 30px;
 }
 
@@ -57,13 +57,13 @@
   list-style-type: disc;
 }
 
-@media (max-width: 450px) {
+@media (width <= 450px) {
   .guarantees {
     margin: 0 16px;
   }
 
   .guarantees__header {
-    margin: 8px 0 6px 0;
+    margin: 8px 0 6px;
     font-size: 22px;
   }
 

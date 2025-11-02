@@ -9,8 +9,8 @@
 .navigation__trigger,
 .navigation__trigger-content {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 .navigation__items,
@@ -56,10 +56,13 @@
 }
 
 .navigation__sub-menu {
-  display: block;
-  padding: 8px 0;
   position: absolute;
+
+  display: block;
+
   width: 174px;
+  padding: 8px 0;
+
   background-color: #004578;
 }
 
@@ -79,13 +82,14 @@
 
 .navigation__sub-menu-link {
   padding-left: 12px;
+
   font-size: 16px;
   font-weight: normal;
   color: #fff;
   text-decoration: none;
 }
 
-@media (max-width: 900px) {
+@media (width <= 900px) {
   .navigation__item-link,
   .navigation__sub-menu-container {
     font-size: 16px;
