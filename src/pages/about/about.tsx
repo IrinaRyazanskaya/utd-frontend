@@ -1,6 +1,7 @@
+import type { FC } from "react";
 import "./about.css";
 
-const About = (): JSX.Element => {
+const About: FC = () => {
   return (
     <article className="about">
       <h2 className="about__header">О компании</h2>
@@ -69,5 +70,7 @@ const About = (): JSX.Element => {
     </article>
   );
 };
+
+About.displayName = "About";
 
 export { About };

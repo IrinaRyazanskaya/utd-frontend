@@ -1,4 +1,5 @@
 import { useState } from "react";
+import type { FC } from "react";
 import { RequestModal } from "../request-modal";
 import { CallModal } from "../call-modal";
 import "./header.css";
@@ -10,7 +11,7 @@ import iconPriceSrc from "./price-icon.svg";
 import iconRequestSrc from "./request-icon.svg";
 import iconCallSrc from "./call-icon.svg";
 
-const Header = (): JSX.Element => {
+const Header: FC = () => {
   const [isRequestModalOpen, setRequestModalOpen] = useState(false);
 
   const handleRequestClick = () => {
@@ -98,5 +99,7 @@ const Header = (): JSX.Element => {
     </header>
   );
 };
+
+Header.displayName = "Header";
 
 export { Header };

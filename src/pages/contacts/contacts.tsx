@@ -1,7 +1,8 @@
 import { Map, Placemark, GeolocationControl, ZoomControl } from "react-yandex-maps";
+import type { FC } from "react";
 import "./contacts.css";
 
-const Contacts = (): JSX.Element => {
+const Contacts: FC = () => {
   const officeLocation: [number, number] = [55.105233, 60.133198];
 
   return (
@@ -65,5 +66,7 @@ const Contacts = (): JSX.Element => {
     </article>
   );
 };
+
+Contacts.displayName = "Contacts";
 
 export { Contacts };

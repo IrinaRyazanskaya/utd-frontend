@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type { ChangeEvent, FormEvent } from "react";
+import type { ChangeEvent, FC, FormEvent } from "react";
 import { orderCall } from "../../api/order-call";
 
 import "./call-modal.css";
@@ -13,7 +13,7 @@ type CallModalProps = {
   onClose: () => void;
 };
 
-const CallModal = ({ onClose }: CallModalProps): JSX.Element => {
+const CallModal: FC<CallModalProps> = ({ onClose }) => {
   const [buyerName, setBuyerName] = useState<string>("");
   const [buyerPhone, setBuyerPhone] = useState<string>("");
   const [requestState, setRequestState] = useState<RequestState>("unknown");
@@ -135,4 +135,7 @@ const CallModal = ({ onClose }: CallModalProps): JSX.Element => {
   );
 };
 
+CallModal.displayName = "CallModal";
+
 export { CallModal };
+export type { CallModalProps };

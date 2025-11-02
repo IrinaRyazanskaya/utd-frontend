@@ -1,4 +1,5 @@
 import { useState } from "react";
+import type { FC } from "react";
 import { HashLink } from "react-router-hash-link";
 import { Divider } from "../../components/divider";
 import { RequestModal } from "../../components/request-modal";
@@ -15,7 +16,7 @@ import iconRequestSrc from "./request-icon.svg";
 import iconTrophySrc from "./trophy-icon.svg";
 import iconTruckSrc from "./truck-icon.svg";
 
-const Home = (): JSX.Element => {
+const Home: FC = () => {
   const [isRequestModalOpen, setRequestModalOpen] = useState(false);
 
   const handleRequestClick = () => {
@@ -170,5 +171,7 @@ const Home = (): JSX.Element => {
     </article>
   );
 };
+
+Home.displayName = "Home";
 
 export { Home };

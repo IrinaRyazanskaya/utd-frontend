@@ -1,11 +1,11 @@
 import { useState } from "react";
-import type { ChangeEvent } from "react";
+import type { ChangeEvent, FC } from "react";
 import { Link } from "react-router-dom";
 import { freezeScroll, unfreezeScroll } from "../../utils/scroll";
 import "./mobile-navigation.css";
 import mobileLogoSrc from "./mobile-logo.png";
 
-const MobileNavigation = (): JSX.Element => {
+const MobileNavigation: FC = () => {
   const [isInputChecked, setInputChecked] = useState<boolean>(false);
 
   const handleToggle = (event: ChangeEvent<HTMLInputElement>) => {
@@ -91,5 +91,7 @@ const MobileNavigation = (): JSX.Element => {
     </nav>
   );
 };
+
+MobileNavigation.displayName = "MobileNavigation";
 
 export { MobileNavigation };

@@ -1,6 +1,7 @@
+import type { FC } from "react";
 import "./privacy.css";
 
-const Privacy = (): JSX.Element => {
+const Privacy: FC = () => {
   return (
     <article className="privacy">
       <h2 className="privacy__header">Политика конфиденциальности</h2>
@@ -237,5 +238,7 @@ const Privacy = (): JSX.Element => {
     </article>
   );
 };
+
+Privacy.displayName = "Privacy";
 
 export { Privacy };

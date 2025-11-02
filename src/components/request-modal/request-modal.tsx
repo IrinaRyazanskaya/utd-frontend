@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type { ChangeEvent, FormEvent } from "react";
+import type { ChangeEvent, FC, FormEvent } from "react";
 import { applyRequest } from "../../api/apply-request";
 
 import "./request-modal.css";
@@ -13,7 +13,7 @@ type RequestModalProps = {
   onClose: () => void;
 };
 
-const RequestModal = ({ onClose }: RequestModalProps): JSX.Element => {
+const RequestModal: FC<RequestModalProps> = ({ onClose }) => {
   const [buyerName, setBuyerName] = useState<string>("");
   const [buyerEmail, setBuyerEmail] = useState<string>("");
   const [buyerPhone, setBuyerPhone] = useState<string>("");
@@ -198,4 +198,7 @@ const RequestModal = ({ onClose }: RequestModalProps): JSX.Element => {
   );
 };
 
+RequestModal.displayName = "RequestModal";
+
 export { RequestModal };
+export type { RequestModalProps };

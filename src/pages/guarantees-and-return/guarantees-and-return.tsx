@@ -1,7 +1,8 @@
+import type { FC } from "react";
 import "./guarantees-and-return.css";
 import doc from "./Образец акта рекламации.docx";
 
-const Guarantees = (): JSX.Element => {
+const Guarantees: FC = () => {
   return (
     <article className="guarantees">
       <h2 className="guarantees__header">Гарантии</h2>
@@ -72,5 +73,7 @@ const Guarantees = (): JSX.Element => {
     </article>
   );
 };
+
+Guarantees.displayName = "Guarantees";
 
 export { Guarantees };

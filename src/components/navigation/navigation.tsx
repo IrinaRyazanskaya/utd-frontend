@@ -1,7 +1,8 @@
 import { NavLink, useLocation } from "react-router-dom";
+import type { FC } from "react";
 import "./navigation.css";
 
-const Navigation = (): JSX.Element => {
+const Navigation: FC = () => {
   const location = useLocation();
   const customerPaths: readonly string[] = ["/delivery", "/guarantees", "/details"];
   const isCustomerPath = customerPaths.some((path) => path === location.pathname);
@@ -114,5 +115,7 @@ const Navigation = (): JSX.Element => {
     </nav>
   );
 };
+
+Navigation.displayName = "Navigation";
 
 export { Navigation };

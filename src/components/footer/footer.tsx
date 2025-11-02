@@ -1,4 +1,5 @@
 import { useState } from "react";
+import type { FC } from "react";
 import { RequestModal } from "../request-modal";
 import { CallModal } from "../call-modal";
 import { Link } from "react-router-dom";
@@ -11,7 +12,7 @@ import iconPhoneSrc from "./phone-icon.svg";
 import iconEmailSrc from "./email-icon.svg";
 import iconPlaceholderSrc from "./placeholder-icon.svg";
 
-const Footer = (): JSX.Element => {
+const Footer: FC = () => {
   const [isRequestModalOpen, setRequestModalOpen] = useState(false);
 
   const handleRequestClick = () => {
@@ -125,5 +126,7 @@ const Footer = (): JSX.Element => {
     </footer>
   );
 };
+
+Footer.displayName = "Footer";
 
 export { Footer };

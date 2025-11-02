@@ -1,6 +1,7 @@
+import type { FC } from "react";
 import "./company-details.css";
 
-const Details = (): JSX.Element => {
+const Details: FC = () => {
   return (
     <article className="details">
       <h2 className="details__header">Реквизиты компании</h2>
@@ -79,5 +80,7 @@ const Details = (): JSX.Element => {
     </article>
   );
 };
+
+Details.displayName = "Details";
 
 export { Details };

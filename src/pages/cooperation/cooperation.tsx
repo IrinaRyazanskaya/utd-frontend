@@ -1,9 +1,10 @@
+import type { FC } from "react";
 import "./cooperation.css";
 import iconDetailSrc from "./detail-icon.svg";
 import iconTruckSrc from "./truck-icon.svg";
 import iconPercentSrc from "./percent-icon.svg";
 
-const Cooperation = (): JSX.Element => {
+const Cooperation: FC = () => {
   return (
     <article className="cooperation">
       <h2 className="cooperation__header">Сотрудничество</h2>
@@ -57,5 +58,7 @@ const Cooperation = (): JSX.Element => {
     </article>
   );
 };
+
+Cooperation.displayName = "Cooperation";
 
 export { Cooperation };

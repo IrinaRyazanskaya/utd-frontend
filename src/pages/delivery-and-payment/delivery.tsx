@@ -1,4 +1,5 @@
 import { HashLink } from "react-router-hash-link";
+import type { FC } from "react";
 import "./delivery.css";
 import iconMapSrc from "./map-icon.svg";
 import iconTruckSrc from "./truck-icon.svg";
@@ -11,7 +12,7 @@ import cardIconRequestSrc from "./request-icon.svg";
 import cardIconBoxSrc from "./box-icon.svg";
 import cardIconArrow from "./arrow-icon.svg";
 
-const Delivery = (): JSX.Element => {
+const Delivery: FC = () => {
   return (
     <article className="delivery">
       <h2 className="delivery__header">Доставка запчастей</h2>
@@ -239,5 +240,7 @@ const Delivery = (): JSX.Element => {
     </article>
   );
 };
+
+Delivery.displayName = "Delivery";
 
 export { Delivery };

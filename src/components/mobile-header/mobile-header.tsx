@@ -1,4 +1,5 @@
 import { useState } from "react";
+import type { FC } from "react";
 import { RequestModal } from "../request-modal";
 import { CallModal } from "../call-modal";
 import "./mobile-header.css";
@@ -9,7 +10,7 @@ import iconPriceSrc from "./price-icon.svg";
 import iconRequestSrc from "./request-icon.svg";
 import iconCallSrc from "./call-icon.svg";
 
-const MobileHeader = (): JSX.Element => {
+const MobileHeader: FC = () => {
   const [isRequestModalOpen, setRequestModalOpen] = useState(false);
 
   const handleRequestClick = () => {
@@ -104,5 +105,7 @@ const MobileHeader = (): JSX.Element => {
     </header>
   );
 };
+
+MobileHeader.displayName = "MobileHeader";
 
 export { MobileHeader };

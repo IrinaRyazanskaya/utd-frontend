@@ -1,4 +1,5 @@
 import { useMediaQuery } from "react-responsive";
+import type { FC } from "react";
 import { YMaps } from "react-yandex-maps";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Navigation } from "../components/navigation";
@@ -16,7 +17,7 @@ import { Delivery } from "../pages/delivery-and-payment";
 import { Home } from "../pages/home";
 import { Privacy } from "../pages/privacy";
 
-const Application = (): JSX.Element => {
+const Application: FC = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
 
   return (
@@ -56,5 +57,7 @@ const Application = (): JSX.Element => {
     </YMaps>
   );
 };
+
+Application.displayName = "Application";
 
 export { Application };
