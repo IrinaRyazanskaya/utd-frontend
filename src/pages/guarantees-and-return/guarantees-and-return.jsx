@@ -8,8 +8,7 @@ function Guarantees() {
       <p className="guarantees__facts">
         На все запчасти распространяется гарантия заводов-производителей.
         <br />
-        Все вопросы, связанные с условиями и сроками гарантии, Вы можете задать
-        нашим менеджерам.
+        Все вопросы, связанные с условиями и сроками гарантии, Вы можете задать нашим менеджерам.
       </p>
       <ul className="guarantees__contacts-list">
         <li className="guarantees__contacts">
@@ -22,9 +21,7 @@ function Guarantees() {
           </a>
         </li>
         <li className="guarantees__contacts">
-          <strong className="guarantees__contacts-label">
-            По электронной почте:
-          </strong>
+          <strong className="guarantees__contacts-label">По электронной почте:</strong>
           <a className="guarantees__contact-link" href="mailto:gruz_74@mail.ru">
             gruz_74@mail.ru
           </a>
@@ -42,16 +39,15 @@ function Guarantees() {
           Поставить в известность менеджера осуществлявшего отгрузку.
         </li>
         <li className="guarantees__rule">
-          В случае <strong>обмена</strong> вместе с некачественной продукцией
-          необходимо отправить следующий пакет документов:
+          В случае <strong>обмена</strong> вместе с некачественной продукцией необходимо отправить
+          следующий пакет документов:
           <ul className="guarantees__explanations-list">
             <li className="guarantees__explanation">
-              копия документа, по которому приобретено изделие (накладная,
-              счет-фактура с датой продажи);
+              копия документа, по которому приобретено изделие (накладная, счет-фактура с датой
+              продажи);
             </li>
             <li className="guarantees__explanation">
-              акт рекламации или претензию в отдел продаж ООО ТД
-              «УралТехДеталь».
+              акт рекламации или претензию в отдел продаж ООО ТД «УралТехДеталь».
             </li>
           </ul>
           В акте указать следующее:
@@ -61,15 +57,13 @@ function Guarantees() {
             <li className="guarantees__document">Название организации</li>
             <li className="guarantees__document">ФИО составителя</li>
             <li className="guarantees__document">Наименование изделия</li>
-            <li className="guarantees__document">
-              Описание дефекта или причина возврата
-            </li>
+            <li className="guarantees__document">Описание дефекта или причина возврата</li>
             <li className="guarantees__document">Подпись</li>
           </ul>
         </li>
         <li className="guarantees__rule">
-          В случае <strong>возврата</strong> продукции к выше перечисленным
-          документам необходимо приложить накладную и счет фактуру на возврат.
+          В случае <strong>возврата</strong> продукции к выше перечисленным документам необходимо
+          приложить накладную и счет фактуру на возврат.
         </li>
       </ol>
       <a className="guarantees__download-link" href={doc} download>

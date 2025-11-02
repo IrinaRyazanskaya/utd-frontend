@@ -35,11 +35,7 @@ function MobileHeader() {
       <div className="mobile-header__contacts">
         <div className="mobile-header__phones">
           <div className="mobile-header__phone">
-            <img
-              className="mobile-header__phone-icon"
-              src={iconPhoneSrc}
-              alt="Иконка телефона"
-            />
+            <img className="mobile-header__phone-icon" src={iconPhoneSrc} alt="Иконка телефона" />
             <a className="mobile-header__phone-number" href="tel:+73513264004">
               +7 (3513) 264-004
             </a>
@@ -57,28 +53,14 @@ function MobileHeader() {
         </div>
         <div className="mobile-header__emails">
           <div className="mobile-header__email">
-            <img
-              className="mobile-header__email-icon"
-              src={iconEmailSrc}
-              alt="Иконка email"
-            />
-            <a
-              className="mobile-header__email-address"
-              href="mailto:gruz_74@mail.ru"
-            >
+            <img className="mobile-header__email-icon" src={iconEmailSrc} alt="Иконка email" />
+            <a className="mobile-header__email-address" href="mailto:gruz_74@mail.ru">
               gruz_74@mail.ru (отдел продаж)
             </a>
           </div>
           <div className="mobile-header__email">
-            <img
-              className="mobile-header__email-icon"
-              src={iconEmailSrc}
-              alt="Иконка email"
-            />
-            <a
-              className="mobile-header__email-address"
-              href="mailto:89193151000@mail.ru"
-            >
+            <img className="mobile-header__email-icon" src={iconEmailSrc} alt="Иконка email" />
+            <a className="mobile-header__email-address" href="mailto:89193151000@mail.ru">
               89193151000@mail.ru (отдел закупок)
             </a>
           </div>
@@ -86,11 +68,7 @@ function MobileHeader() {
       </div>
       <div className="mobile-header__actions">
         <div className="mobile-header__action">
-          <img
-            className="mobile-header__action-icon"
-            src={iconPriceSrc}
-            alt="Иконка прайс-листа"
-          />
+          <img className="mobile-header__action-icon" src={iconPriceSrc} alt="Иконка прайс-листа" />
           <a
             className="mobile-header__action-link"
             href="https://drive.google.com/file/d/1YJSsE58Co4uEeVLHjXuhn4hRS_4h0usD/view?usp=sharing"
@@ -106,10 +84,7 @@ function MobileHeader() {
             src={iconRequestSrc}
             alt="Иконка отправки заявки"
           />
-          <button
-            className="mobile-header__action-button"
-            onClick={handleRequestClick}
-          >
+          <button className="mobile-header__action-button" onClick={handleRequestClick}>
             Отправить заявку
           </button>
           {isRequestModalOpen && <RequestModal onClose={closeRequestModal} />}
@@ -120,10 +95,7 @@ function MobileHeader() {
             src={iconCallSrc}
             alt="Иконка заказа звонка"
           />
-          <button
-            className="mobile-header__action-button"
-            onClick={handleCallClick}
-          >
+          <button className="mobile-header__action-button" onClick={handleCallClick}>
             Заказать звонок
           </button>
           {isCallModalOpen && <CallModal onClose={closeCallModal} />}

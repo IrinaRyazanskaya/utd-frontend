@@ -60,22 +60,13 @@ function CallModal(props) {
         />
         <p className="call-modal__form-text">
           Отправляя данную форму, я подтверждаю, что ознакомлен с&nbsp;
-          <a
-            className="call-modal__form-link"
-            target="_blank"
-            rel="noreferrer"
-            href="/privacy"
-          >
+          <a className="call-modal__form-link" target="_blank" rel="noreferrer" href="/privacy">
             политикой конфиденциальности
           </a>
           &nbsp;и согласен на хранение и обработку персональных данных.
         </p>
         <div className="call-modal__button-container">
-          <input
-            className="call-modal__send-button"
-            type="submit"
-            value="ОТПРАВИТЬ"
-          />
+          <input className="call-modal__send-button" type="submit" value="ОТПРАВИТЬ" />
         </div>
       </form>
     </>
@@ -91,11 +82,7 @@ function CallModal(props) {
   const success = (
     <div className="call-modal__success">
       <p className="call-modal__success-text">Заявка отправлена</p>
-      <img
-        className="call-modal__success-icon"
-        src={iconSuccessSrc}
-        alt="Галочка в круге"
-      />
+      <img className="call-modal__success-icon" src={iconSuccessSrc} alt="Галочка в круге" />
       <p>Скоро мы с Вами свяжемся</p>
     </div>
   );
@@ -103,14 +90,8 @@ function CallModal(props) {
   const failure = (
     <div className="call-modal__failure">
       <p className="call-modal__failure-text">Что-то пошло не так</p>
-      <img
-        className="call-modal__failure-icon"
-        src={iconFailureSrc}
-        alt="Грустный смайлик"
-      />
-      <p className="call-modal__failure-subtext">
-        Не получилось отправить Вашу заявку
-      </p>
+      <img className="call-modal__failure-icon" src={iconFailureSrc} alt="Грустный смайлик" />
+      <p className="call-modal__failure-subtext">Не получилось отправить Вашу заявку</p>
       <button
         className="call-modal__failure-button"
         onClick={() => {
@@ -139,11 +120,7 @@ function CallModal(props) {
       <div className="call-modal-blackout" />
       <div className="call-modal">
         <button className="call-modal__close-button" onClick={props.onClose}>
-          <img
-            className="call-modal__close-icon"
-            src={iconCrossSrc}
-            alt="Иконка крестика"
-          />
+          <img className="call-modal__close-icon" src={iconCrossSrc} alt="Иконка крестика" />
         </button>
         {content}
       </div>

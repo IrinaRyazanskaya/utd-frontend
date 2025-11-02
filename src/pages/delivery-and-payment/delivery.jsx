@@ -17,64 +17,42 @@ function Delivery() {
       <h2 className="delivery__header">Доставка запчастей</h2>
       <div className="delivery__container">
         <div className="delivery__fact-card">
-          <img
-            className="delivery__icon"
-            src={iconMapSrc}
-            alt="Иконка с картой"
-          />
+          <img className="delivery__icon" src={iconMapSrc} alt="Иконка с картой" />
           <p className="delivery__advantages">
-            Отправка заказов в любые регионы России и Ближнего Зарубежья любым
-            удобным для Вас способом
+            Отправка заказов в любые регионы России и Ближнего Зарубежья любым удобным для Вас
+            способом
           </p>
         </div>
         <div className="delivery__fact-card">
-          <img
-            className="delivery__icon"
-            src={iconTruckSrc}
-            alt="Иконка с грузовиком"
-          />
+          <img className="delivery__icon" src={iconTruckSrc} alt="Иконка с грузовиком" />
           <p className="delivery__advantages">
-            Доставка до транспортных компаний оптовым покупателям осуществляется
-            нашим транспортом бесплатно
+            Доставка до транспортных компаний оптовым покупателям осуществляется нашим транспортом
+            бесплатно
           </p>
         </div>
         <div className="delivery__fact-card">
-          <img
-            className="delivery__icon"
-            src={iconRubleSrc}
-            alt="Иконка со знаком рубля"
-          />
+          <img className="delivery__icon" src={iconRubleSrc} alt="Иконка со знаком рубля" />
           <p className="delivery__advantages">
-            Транспортный сбор в размере 300 рублей распостраняется только на
-            заказы с суммой покупки менее 1 500 рублей
+            Транспортный сбор в размере 300 рублей распостраняется только на заказы с суммой покупки
+            менее 1 500 рублей
           </p>
         </div>
         <div className="delivery__fact-card">
-          <img
-            className="delivery__icon"
-            src={iconClockSrc}
-            alt="Иконка с часами"
-          />
+          <img className="delivery__icon" src={iconClockSrc} alt="Иконка с часами" />
           <p className="delivery__advantages">
-            Отгрузка заказа осуществляется на следующий день от подачи заявки,
-            при условии наличия товара на складе
+            Отгрузка заказа осуществляется на следующий день от подачи заявки, при условии наличия
+            товара на складе
           </p>
         </div>
         <div className="delivery__fact-card">
-          <img
-            className="delivery__icon"
-            src={iconManagerSrc}
-            alt="Иконка с менеджером"
-          />
+          <img className="delivery__icon" src={iconManagerSrc} alt="Иконка с менеджером" />
           <p className="delivery__advantages delivery__advantages-long">
-            Срок комплектации и отгрузки комплексных заказов дополнительно
-            обсуждается с менеджером, закрепленным за Вашей организацией
+            Срок комплектации и отгрузки комплексных заказов дополнительно обсуждается с менеджером,
+            закрепленным за Вашей организацией
           </p>
         </div>
       </div>
-      <h3 className="delivery__subtitle">
-        Варианты доставки через транспортные компании:
-      </h3>
+      <h3 className="delivery__subtitle">Варианты доставки через транспортные компании:</h3>
       <ul className="delivery__companies-list">
         <li className="delivery__company">
           ТК Пэк (
@@ -198,44 +176,32 @@ function Delivery() {
         </li>
       </ul>
       <p className="delivery__text">
-        Стоимость доставки до Вашего города рассчитывается индивидуально по
-        тарифам выбранной транспортной компании.
+        Стоимость доставки до Вашего города рассчитывается индивидуально по тарифам выбранной
+        транспортной компании.
       </p>
       <p className="delivery__text">
         Доставка по Миассу осуществляется нашим транспортом бесплатно.
       </p>
       <h2 className="delivery__header">Самовывоз</h2>
       <p className="delivery__text">
-        Заказ можно получить на складе по адресу г. Миасс, ул. Тургоякское
-        шоссе, дом № 3/16, помещение 1, предварительно связавшись с нашим
-        менеджером по телефону.
+        Заказ можно получить на складе по адресу г. Миасс, ул. Тургоякское шоссе, дом № 3/16,
+        помещение 1, предварительно связавшись с нашим менеджером по телефону.
       </p>
       <h2 className="delivery__header">Оплата</h2>
-      <p className="delivery__text">
-        Вы можете оплатить Ваш заказ следующими способами:
-      </p>
+      <p className="delivery__text">Вы можете оплатить Ваш заказ следующими способами:</p>
       <ul className="delivery__payment-list">
-        <li className="delivery__payment">
-          Оплата наличными (при самовывозе).
-        </li>
-        <li className="delivery__payment">
-          Оплата безналичным расчетом на основании счета.
-        </li>
+        <li className="delivery__payment">Оплата наличными (при самовывозе).</li>
+        <li className="delivery__payment">Оплата безналичным расчетом на основании счета.</li>
       </ul>
+      <p className="delivery__text">Отгрузка заказа производится после 100% оплаты счета.</p>
       <p className="delivery__text">
-        Отгрузка заказа производится после 100% оплаты счета.
-      </p>
-      <p className="delivery__text">
-        Для постоянных и надежных клиентов специальные условия рассрочки или
-        отсрочки платежа, а также скидки — все условия индивидуальны и
-        обсуждаются с менеджером.
+        Для постоянных и надежных клиентов специальные условия рассрочки или отсрочки платежа, а
+        также скидки — все условия индивидуальны и обсуждаются с менеджером.
       </p>
       <HashLink className="delivery__button-link" smooth to="/details#top">
         РЕКВИЗИТЫ
       </HashLink>
-      <h2 className="delivery__header delivery__last-header">
-        Как происходит заказ?
-      </h2>
+      <h2 className="delivery__header delivery__last-header">Как происходит заказ?</h2>
       <div className="delivery__cards">
         <div className="delivery__card">
           <img
@@ -244,56 +210,29 @@ function Delivery() {
             alt="Иконка заполнения заявки"
           />
           <p className="delivery__card-text">
-            Вы отправляете заявку любым удобным способом (по телефону, по эл.
-            почте или на сайте)
+            Вы отправляете заявку любым удобным способом (по телефону, по эл. почте или на сайте)
           </p>
         </div>
-        <img
-          className="delivery__arrow"
-          src={cardIconArrow}
-          alt="Иконка стрелки вправо"
-        />
+        <img className="delivery__arrow" src={cardIconArrow} alt="Иконка стрелки вправо" />
         <div className="delivery__card">
-          <img
-            className="delivery__card-icon"
-            src={cardIconManagerSrc}
-            alt="Иконка менеджера"
-          />
+          <img className="delivery__card-icon" src={cardIconManagerSrc} alt="Иконка менеджера" />
           <p className="delivery__card-text">
-            Менеджеры обработают Вашу заявку и отправят <br /> вам коммерческое
-            предложение
+            Менеджеры обработают Вашу заявку и отправят <br /> вам коммерческое предложение
           </p>
         </div>
-        <img
-          className="delivery__arrow"
-          src={cardIconArrow}
-          alt="Иконка стрелки вправо"
-        />
+        <img className="delivery__arrow" src={cardIconArrow} alt="Иконка стрелки вправо" />
         <div className="delivery__card">
-          <img
-            className="delivery__card-icon"
-            src={cardIconBoxSrc}
-            alt="Иконка коробки"
-          />
+          <img className="delivery__card-icon" src={cardIconBoxSrc} alt="Иконка коробки" />
           <p className="delivery__card-text">
-            После согласования условий оплаты и доставки мы комплектуем Ваш
-            заказ
+            После согласования условий оплаты и доставки мы комплектуем Ваш заказ
           </p>
         </div>
-        <img
-          className="delivery__arrow"
-          src={cardIconArrow}
-          alt="Иконка стрелки вправо"
-        />
+        <img className="delivery__arrow" src={cardIconArrow} alt="Иконка стрелки вправо" />
         <div className="delivery__card">
-          <img
-            className="delivery__card-icon"
-            src={cardIconTruckSrc}
-            alt="Иконка грузовика"
-          />
+          <img className="delivery__card-icon" src={cardIconTruckSrc} alt="Иконка грузовика" />
           <p className="delivery__card-text">
-            В течение дня после оплаты отгружаем Ваш заказ и осуществляем
-            доставку выбранным Вами способом
+            В течение дня после оплаты отгружаем Ваш заказ и осуществляем доставку выбранным Вами
+            способом
           </p>
         </div>
       </div>

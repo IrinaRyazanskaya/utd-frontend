@@ -115,22 +115,13 @@ function RequestModal(props) {
         ></textarea>
         <p className="request-modal__form-text">
           Отправляя данную форму, я подтверждаю, что ознакомлен с&nbsp;
-          <a
-            className="request-modal__form-link"
-            target="_blank"
-            rel="noreferrer"
-            href="/privacy"
-          >
+          <a className="request-modal__form-link" target="_blank" rel="noreferrer" href="/privacy">
             политикой конфиденциальности
           </a>
           &nbsp;и согласен на хранение и обработку персональных данных.
         </p>
         <div className="request-modal__button-container">
-          <input
-            className="request-modal__send-button"
-            type="submit"
-            value="ОТПРАВИТЬ"
-          />
+          <input className="request-modal__send-button" type="submit" value="ОТПРАВИТЬ" />
         </div>
       </form>
     </>
@@ -146,11 +137,7 @@ function RequestModal(props) {
   const success = (
     <div className="request-modal__success">
       <p className="request-modal__success-text">Заявка отправлена</p>
-      <img
-        className="request-modal__success-icon"
-        src={iconSuccessSrc}
-        alt="Галочка в круге"
-      />
+      <img className="request-modal__success-icon" src={iconSuccessSrc} alt="Галочка в круге" />
       <p>Скоро мы с Вами свяжемся</p>
     </div>
   );
@@ -158,11 +145,7 @@ function RequestModal(props) {
   const failure = (
     <div className="request-modal__failure">
       <p className="request-modal__failure-text">Что-то пошло не так</p>
-      <img
-        className="request-modal__failure-icon"
-        src={iconFailureSrc}
-        alt="Грустный смайлик"
-      />
+      <img className="request-modal__failure-icon" src={iconFailureSrc} alt="Грустный смайлик" />
       <p>Не получилось отправить Вашу заявку</p>
       <button
         className="request-modal__failure-button"
@@ -192,11 +175,7 @@ function RequestModal(props) {
       <div className="request-modal-blackout" />
       <div className="request-modal">
         <button className="request-modal__close-button" onClick={props.onClose}>
-          <img
-            className="request-modal__close-icon"
-            src={iconCrossSrc}
-            alt="Иконка крестика"
-          />
+          <img className="request-modal__close-icon" src={iconCrossSrc} alt="Иконка крестика" />
         </button>
         {content}
       </div>

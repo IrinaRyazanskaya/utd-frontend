@@ -1,12 +1,10 @@
-import { CallModal } from './call-modal';
+import { CallModal } from "./call-modal";
 
 export default {
-    component: CallModal,
-    title: 'Components/CallModal',
+  component: CallModal,
+  title: "Components/CallModal",
 };
 
 export const BasicExample = () => {
-    return (
-        <CallModal />
-    )
+  return <CallModal />;
 };

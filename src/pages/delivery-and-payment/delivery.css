@@ -1,210 +1,210 @@
 .delivery {
-    color: #3E4B5B;
-    margin: 0 40px;
-    padding-top: 16px;
+  color: #3e4b5b;
+  margin: 0 40px;
+  padding-top: 16px;
 }
 
 .delivery__header {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 .delivery__container,
 .delivery__cards,
 .delivery__card,
 .delivery__fact-card {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .delivery__container {
-    flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .delivery__fact-card {
-    margin: 0 40px 18px 0;
+  margin: 0 40px 18px 0;
 }
 
 .delivery__advantages {
-    margin: 0 30px 0 12px;
-    width: 244px;
+  margin: 0 30px 0 12px;
+  width: 244px;
 }
 
 .delivery__advantages-long {
-    width: 300px;
+  width: 300px;
 }
 
 .delivery__advantages:last-of-type {
-    margin-right: 0;
+  margin-right: 0;
 }
 
 .delivery__subtitle {
-    margin: 14px 0;
-    font-size: 20px;
+  margin: 14px 0;
+  font-size: 20px;
 }
 
 .delivery__companies-list {
-    margin-top: 12px;
-    padding-left: 26px;
-    line-height: 30px;
-    list-style-type: none;
+  margin-top: 12px;
+  padding-left: 26px;
+  line-height: 30px;
+  list-style-type: none;
 }
 
 .delivery__company-link {
-    color: #2B88D8;
-    text-underline-offset: 3px;
+  color: #2b88d8;
+  text-underline-offset: 3px;
 }
 
 .delivery__company-link:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .delivery__text,
 .delivery__payment-list {
-    line-height: 26px;
+  line-height: 26px;
 }
 
 .delivery__payment-list {
-    padding-left: 16px;
+  padding-left: 16px;
 }
 
 .delivery__button-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-    width: 160px;
-    height: 36px;
-    border: 1px solid #004578;
-    border-radius: 2px;
-    line-height: 15px;
-    color: #004578;
-    text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  width: 160px;
+  height: 36px;
+  border: 1px solid #004578;
+  border-radius: 2px;
+  line-height: 15px;
+  color: #004578;
+  text-decoration: none;
 }
 
 .delivery__button-link:hover {
-    border-color: rgba(0, 69, 120, 0.7);
-    color: rgba(0, 69, 120, 0.7);
+  border-color: rgba(0, 69, 120, 0.7);
+  color: rgba(0, 69, 120, 0.7);
 }
 
 .delivery__card {
-    justify-content: center;
-    width: 236px;
-    height: 134px;
-    border-radius: 12px;
-    background-color: #DEECF9;
-    font-size: 14px;
+  justify-content: center;
+  width: 236px;
+  height: 134px;
+  border-radius: 12px;
+  background-color: #deecf9;
+  font-size: 14px;
 }
 
 .delivery__card-text {
-    width: 150px;
-    margin-left: 8px;
+  width: 150px;
+  margin-left: 8px;
 }
 
 .delivery__arrow {
-    margin: 0 4px;
+  margin: 0 4px;
 }
 
 @media (max-width: 1142px) {
-    .delivery__advantages {
-        width: 216px;
-        font-size: 14px;
-    }
+  .delivery__advantages {
+    width: 216px;
+    font-size: 14px;
+  }
 
-    .delivery__advantages-long {
-        width: 278px;
-    }
+  .delivery__advantages-long {
+    width: 278px;
+  }
 
-    .delivery__card-text {
-        width: 120px;
-        font-size: 12px;
-    }
+  .delivery__card-text {
+    width: 120px;
+    font-size: 12px;
+  }
 }
 
 @media (max-width: 1023px) {
-    .delivery {
-        margin: 0 30px;
-    }
+  .delivery {
+    margin: 0 30px;
+  }
 
-    .delivery__icon {
-        width: 54px;
-    }
+  .delivery__icon {
+    width: 54px;
+  }
 
-    .delivery__card {
-        height: 86px;
-    }
+  .delivery__card {
+    height: 86px;
+  }
 
-    .delivery__card-text {
-        width: 100px;
-        font-size: 10px;
-    }
+  .delivery__card-text {
+    width: 100px;
+    font-size: 10px;
+  }
 
-    .delivery__card-icon {
-        width: 36px;
-    }
+  .delivery__card-icon {
+    width: 36px;
+  }
 
-    .delivery__arrow {
-        width: 24px;
-    }
+  .delivery__arrow {
+    width: 24px;
+  }
 }
 
 @media (max-width: 767px) {
-    .delivery {
-        margin: 0 16px;
-        padding-top: 16px;
-        font-size: 14px;
-    }
+  .delivery {
+    margin: 0 16px;
+    padding-top: 16px;
+    font-size: 14px;
+  }
 
-    .delivery__header {
-        margin: 0;
-        font-size: 22px;
-    }
+  .delivery__header {
+    margin: 0;
+    font-size: 22px;
+  }
 
-    .delivery__advantages-long {
-        width: 240px;
-    }
+  .delivery__advantages-long {
+    width: 240px;
+  }
 
-    .delivery__container {
-        flex-wrap: wrap;
-        margin-top: 10px;
-    }
+  .delivery__container {
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
 
-    .delivery__icon {
-        width: 44px;
-    }
+  .delivery__icon {
+    width: 44px;
+  }
 
-    .delivery__subtitle {
-        margin: 0;
-        font-size: 18px;
-    }
+  .delivery__subtitle {
+    margin: 0;
+    font-size: 18px;
+  }
 
-    .delivery__cards,
-    .delivery__last-header {
-        display: none;
-    }
+  .delivery__cards,
+  .delivery__last-header {
+    display: none;
+  }
 
-    .delivery__companies-list {
-        padding-left: 4px;
-        line-height: 28px;
-    }
+  .delivery__companies-list {
+    padding-left: 4px;
+    line-height: 28px;
+  }
 
-    .delivery__text,
-    .delivery__payment-list {
-        margin: 10px 0;
-        line-height: 22px;
-    }
+  .delivery__text,
+  .delivery__payment-list {
+    margin: 10px 0;
+    line-height: 22px;
+  }
 
-    .delivery__button-link {
-        margin-top: 14px;
-    }
+  .delivery__button-link {
+    margin-top: 14px;
+  }
 }
 
 @media (max-width: 384px) {
-    .delivery__companies-list {
-        font-size: 14px;
-        line-height: 18px;
-    }
+  .delivery__companies-list {
+    font-size: 14px;
+    line-height: 18px;
+  }
 
-    .delivery__company {
-        margin-bottom: 8px;
-    }
+  .delivery__company {
+    margin-bottom: 8px;
+  }
 }

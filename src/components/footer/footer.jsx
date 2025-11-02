@@ -41,28 +41,16 @@ function Footer() {
           target="_blank"
           rel="noreferrer"
         >
-          <img
-            className="footer__action-icon"
-            src={iconPriceSrc}
-            alt="Иконка прайс-листа"
-          />
+          <img className="footer__action-icon" src={iconPriceSrc} alt="Иконка прайс-листа" />
           <span className="footer__price-list">СМОТРЕТЬ ПРАЙС-ЛИСТ</span>
         </a>
         <button className="footer__action-button" onClick={handleRequestClick}>
-          <img
-            className="footer__action-icon"
-            src={iconRequestSrc}
-            alt="Иконка отправки заявки"
-          />
+          <img className="footer__action-icon" src={iconRequestSrc} alt="Иконка отправки заявки" />
           ОТПРАВИТЬ ЗАЯВКУ
         </button>
         {isRequestModalOpen && <RequestModal onClose={closeRequestModal} />}
         <button className="footer__action-button" onClick={handleCallClick}>
-          <img
-            className="footer__action-icon"
-            src={iconCallSrc}
-            alt="Иконка заказа звонка"
-          />
+          <img className="footer__action-icon" src={iconCallSrc} alt="Иконка заказа звонка" />
           ЗАКАЗАТЬ ЗВОНОК
         </button>
         {isCallModalOpen && <CallModal onClose={closeCallModal} />}
@@ -91,11 +79,7 @@ function Footer() {
       </div>
       <div className="footer__contacts">
         <div className="footer__phones">
-          <img
-            className="footer__phones-icon"
-            src={iconPhoneSrc}
-            alt="Иконка телефоноа"
-          />
+          <img className="footer__phones-icon" src={iconPhoneSrc} alt="Иконка телефоноа" />
           <div className="footer__phone-numbers">
             <a className="footer__phone-number" href="tel:+73513264004">
               +7 (3513) 264-004
@@ -106,20 +90,13 @@ function Footer() {
           </div>
         </div>
         <div className="footer__emails">
-          <img
-            className="footer__emails-icon"
-            src={iconEmailSrc}
-            alt="Иконка email"
-          />
+          <img className="footer__emails-icon" src={iconEmailSrc} alt="Иконка email" />
           <div className="footer__email-addresses">
             <a className="footer__email-address" href="mailto:gruz_74@mail.ru">
               gruz_74@mail.ru
             </a>
             <span className="footer__email-text"> отдел продаж </span>
-            <a
-              className="footer__email-address"
-              href="mailto:89193151000@mail.ru"
-            >
+            <a className="footer__email-address" href="mailto:89193151000@mail.ru">
               89193151000@mail.ru
             </a>
             <span className="footer__email-text"> отдел закупок</span>

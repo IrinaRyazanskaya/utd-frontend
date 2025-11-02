@@ -34,19 +34,11 @@ function Header() {
   return (
     <header className="header">
       <div className="header__logo">
-        <img
-          className="header__logo-image"
-          src={logoSrc}
-          alt="Логотип компании"
-        />
+        <img className="header__logo-image" src={logoSrc} alt="Логотип компании" />
       </div>
       <div className="header__phones">
         <div className="header__phone">
-          <img
-            className="header__phone-icon"
-            src={iconPhoneSrc}
-            alt="Иконка телефона"
-          />
+          <img className="header__phone-icon" src={iconPhoneSrc} alt="Иконка телефона" />
           <a className="header__phone-number" href="tel:+73513264004">
             +7 (3513) 264-004
           </a>
@@ -64,36 +56,21 @@ function Header() {
       </div>
       <div className="header__emails">
         <div className="header__email">
-          <img
-            className="header__email-icon"
-            src={iconEmailSrc}
-            alt="Иконка email"
-          />
+          <img className="header__email-icon" src={iconEmailSrc} alt="Иконка email" />
           <a className="header__email-address" href="mailto:gruz_74@mail.ru">
             gruz_74@mail.ru (отдел продаж)
           </a>
         </div>
         <div className="header__email">
-          <img
-            className="header__email-icon"
-            src={iconEmailSrc}
-            alt="Иконка email"
-          />
-          <a
-            className="header__email-address"
-            href="mailto:89193151000@mail.ru"
-          >
+          <img className="header__email-icon" src={iconEmailSrc} alt="Иконка email" />
+          <a className="header__email-address" href="mailto:89193151000@mail.ru">
             89193151000@mail.ru (отдел закупок)
           </a>
         </div>
       </div>
       <div className="header__actions">
         <div className="header__action">
-          <img
-            className="header__action-icon"
-            src={iconPriceSrc}
-            alt="Иконка прайс-листа"
-          />
+          <img className="header__action-icon" src={iconPriceSrc} alt="Иконка прайс-листа" />
           <a
             className="header__action-link"
             href="https://drive.google.com/file/d/1YJSsE58Co4uEeVLHjXuhn4hRS_4h0usD/view?usp=sharing"
@@ -104,25 +81,14 @@ function Header() {
           </a>
         </div>
         <div className="header__action">
-          <img
-            className="header__action-icon"
-            src={iconRequestSrc}
-            alt="Иконка отправки заявки"
-          />
-          <button
-            className="header__action-button"
-            onClick={handleRequestClick}
-          >
+          <img className="header__action-icon" src={iconRequestSrc} alt="Иконка отправки заявки" />
+          <button className="header__action-button" onClick={handleRequestClick}>
             Отправить заявку
           </button>
           {isRequestModalOpen && <RequestModal onClose={closeRequestModal} />}
         </div>
         <div className="header__action">
-          <img
-            className="header__action-icon"
-            src={iconCallSrc}
-            alt="Иконка заказа звонка"
-          />
+          <img className="header__action-icon" src={iconCallSrc} alt="Иконка заказа звонка" />
           <button className="header__action-button" onClick={handleCallClick}>
             Заказать звонок
           </button>

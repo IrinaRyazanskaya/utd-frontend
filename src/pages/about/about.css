@@ -1,63 +1,63 @@
 .about {
-    color: #3E4B5B;
-    margin: 0 40px;
-    padding-top: 16px;
+  color: #3e4b5b;
+  margin: 0 40px;
+  padding-top: 16px;
 }
 
 .about__header {
-    margin: 20px 0 16px 0;
-    font-size: 30px;
-    font-weight: bold;
+  margin: 20px 0 16px 0;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 .about__summary {
-    font-size: 16px;
-    line-height: 30px;
+  font-size: 16px;
+  line-height: 30px;
 }
 
 .about__facts-list {
-    padding: 0;
+  padding: 0;
 }
 
 .about__fact {
-    font-size: 18px;
-    font-weight: bold;
-    line-height: 20px;
-    margin-left: 19px;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 20px;
+  margin-left: 19px;
 }
 
 .about__fact-text {
-    font-size: 16px;
-    font-weight: normal;
-    line-height: 30px;
-    margin-left: -18px;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 30px;
+  margin-left: -18px;
 }
 
 @media (max-width: 450px) {
-    .about {
-        margin: 0 16px;
-    }
+  .about {
+    margin: 0 16px;
+  }
 
-    .about__header {
-        margin: 0;
-        font-size: 22px;
-        line-height: 18px;
-    }
+  .about__header {
+    margin: 0;
+    font-size: 22px;
+    line-height: 18px;
+  }
 
-    .about__summary {
-        margin-top: 8px;
-        font-size: 14px;
-        line-height: 22px;
-    }
+  .about__summary {
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 22px;
+  }
 
-    .about__fact {
-        font-size: 16px;
-        line-height: 16px;
-    }
+  .about__fact {
+    font-size: 16px;
+    line-height: 16px;
+  }
 
-    .about__fact-text {
-        margin: 8px 0 8px -18px;
-        font-size: 14px;
-        line-height: 22px;
-    }
+  .about__fact-text {
+    margin: 8px 0 8px -18px;
+    font-size: 14px;
+    line-height: 22px;
+  }
 }
