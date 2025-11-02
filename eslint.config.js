@@ -9,11 +9,7 @@ export default defineConfig([
   globalIgnores(["dist"]),
   {
     files: ["**/*.{ts,tsx}"],
-    extends: [
-      js.configs.recommended,
-      ts.configs.recommended,
-      reactRefresh.configs.vite,
-    ],
+    extends: [js.configs.recommended, ts.configs.recommended, reactRefresh.configs.vite],
     plugins: {
       "react-hooks": reactHooks,
     },

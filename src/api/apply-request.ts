@@ -10,7 +10,7 @@ const applyRequest = (
   buyerEmail: string,
   buyerPhone: string,
   comment: string,
-  file: File | null
+  file: File | null,
 ): Promise<Response> => {
   const formData = new FormData();
 

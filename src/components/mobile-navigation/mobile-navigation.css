@@ -44,12 +44,6 @@
   transform: rotate(45deg) translate(-9px, -7px);
 }
 
-.mobile-navigation__menu-list {
-  font-size: 30px;
-  font-weight: bold;
-  list-style: none;
-}
-
 .mobile-navigation__link {
   color: #fff;
   text-decoration: none;
@@ -66,6 +60,10 @@
   height: 100vh;
   margin: 0;
   padding: 50px 0;
+
+  font-size: 30px;
+  font-weight: bold;
+  list-style: none;
 
   visibility: hidden;
   background-color: #004578;

@@ -50,12 +50,11 @@
   text-decoration: none;
 }
 
-.header__phone-number:hover,
-.header__email-address:hover,
-.header__action-link:hover,
-.header__action-button:hover {
-  cursor: pointer;
-  opacity: 0.6;
+.header__action-button {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  outline: none;
 }
 
 .header__action-link,
@@ -68,11 +67,12 @@
   text-decoration: none;
 }
 
-.header__action-button {
-  padding: 0;
-  border: none;
-  background-color: transparent;
-  outline: none;
+.header__phone-number:hover,
+.header__email-address:hover,
+.header__action-link:hover,
+.header__action-button:hover {
+  cursor: pointer;
+  opacity: 0.6;
 }
 
 .header__actions {

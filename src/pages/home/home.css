@@ -102,6 +102,10 @@
   text-decoration: none;
 }
 
+.home__action-button {
+  margin-top: 30px;
+}
+
 .home__action-link:hover,
 .home__action-button:hover {
   cursor: pointer;
@@ -110,10 +114,6 @@
 
 .home__action-button:focus {
   outline: none;
-}
-
-.home__action-button {
-  margin-top: 30px;
 }
 
 .home__action-icon {

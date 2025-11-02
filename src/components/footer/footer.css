@@ -33,6 +33,15 @@
   outline: none;
 }
 
+.footer__action-button {
+  margin-top: 18px;
+}
+
+.footer__action-icon {
+  display: block;
+  margin-right: 4px;
+}
+
 .footer__action-link {
   text-decoration: none;
 }
@@ -47,15 +56,6 @@
 .footer__action-link:hover .footer__action-icon,
 .footer__action-button:hover .footer__action-icon {
   opacity: 0.6;
-}
-
-.footer__action-button {
-  margin-top: 18px;
-}
-
-.footer__action-icon {
-  display: block;
-  margin-right: 4px;
 }
 
 .footer__links {
