@@ -1,88 +1,90 @@
 .details {
-    color: #3E4B5B;
-    margin: 0 40px;
-    padding-top: 16px;
+  margin: 0 40px;
+  padding-top: 16px;
+  color: #3e4b5b;
 }
 
 .details__header {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 .details__container {
-    display: flex;
-    align-items: center;
-    margin-bottom: 22px;
-    height: 62px;
-    background-color: #F3F3F3;
+  display: flex;
+  align-items: center;
+
+  height: 62px;
+  margin-bottom: 22px;
+
+  background-color: #f3f3f3;
 }
 
 .details__name {
-    margin: 14px 14px 14px 24px;
-    width: 282px;
+  width: 282px;
+  margin: 14px 14px 14px 24px;
 }
 
-@media (max-width: 1084px) {
-    .details__container {
-        font-size: 14px;
-    }
+@media (width <= 1084px) {
+  .details__container {
+    font-size: 14px;
+  }
 
-    .details__name {
-        width: 230px;
-    }
+  .details__name {
+    width: 230px;
+  }
 
-    .details__description {
-        margin-right: 10px;
-    }
+  .details__description {
+    margin-right: 10px;
+  }
 }
 
-@media (max-width: 939px) {
-    .details__name {
-        width: 140px;
-        word-wrap: break-word;
-    }
+@media (width <= 939px) {
+  .details__name {
+    width: 140px;
+    overflow-wrap: break-word;
+  }
 
-    .details__description {
-        width: 450px;
-    }
+  .details__description {
+    width: 450px;
+  }
 }
 
- @media (max-width: 450px) {
-    .details {
-        justify-content: space-around;
-        margin: 0 16px;
-        padding: 0;
-    }
+@media (width <= 450px) {
+  .details {
+    justify-content: space-around;
+    margin: 0 16px;
+    padding: 0;
+  }
 
-    .details__header {
-        margin: 16px 0;
-        font-size: 22px;
-    }
+  .details__header {
+    margin: 16px 0;
+    font-size: 22px;
+  }
 
-    .details__container {
-        margin-bottom: 10px;
-        height: 74px;
-    }
+  .details__container {
+    height: 74px;
+    margin-bottom: 10px;
+  }
 
-    .details__name {
-        margin: 10px;
-        width: 95px;
-    }
+  .details__name {
+    width: 95px;
+    margin: 10px;
+  }
 
-    .details__description {
-        width: 216px;
-    }
+  .details__description {
+    width: 216px;
+  }
 
-    .details__fact {
-        font-size: 14px;
-    }
- }
+  .details__fact {
+    font-size: 14px;
+  }
+}
 
- @media (max-width: 330px) {
-    .details {
-        margin: 0 8px;
-    }
+@media (width <= 330px) {
+  .details {
+    margin: 0 8px;
+  }
 
-    .details__description {
-        width: 180px;
-    }
- }
+  .details__description {
+    width: 180px;
+  }
+}

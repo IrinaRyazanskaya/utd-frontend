@@ -1,80 +1,83 @@
 .mobile-navigation__container {
-    display: flex;
-    align-items: center;
-    height: 60px;
-    background-color: #004578;
+  display: flex;
+  align-items: center;
+  height: 60px;
+  background-color: #004578;
 }
 
 .mobile-navigation__logo-image {
-    margin: auto;
-    padding: 3px;
-    height: 44px;
+  height: 44px;
+  margin: auto;
+  padding: 3px;
 }
 
 .burger-menu__check {
-    display: none;
+  display: none;
 }
 
 .burger-menu {
-    display: flex;
-    position: absolute;
-    z-index: 1;
+  position: absolute;
+  z-index: 1;
+  display: flex;
 }
 
 .burger-menu__bar {
-    width: 30px;
-    height: 5px;
-    background-color: #fff;
-    margin: 6px 16px;
-    border-radius: 4px;
-    transition: all .4s ease-in-out;
+  width: 30px;
+  height: 5px;
+  margin: 6px 16px;
+  border-radius: 4px;
+
+  background-color: #fff;
+
+  transition: all 0.4s ease-in-out;
 }
 
 .burger-menu__bar_open:first-of-type {
-    transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
 }
 
 .burger-menu__bar_open:nth-of-type(2) {
-    opacity: 0;
+  opacity: 0;
 }
 
 .burger-menu__bar_open:last-of-type {
-    transform: rotate(45deg) translate(-9px, -7px);
-}
-
-.mobile-navigation__menu-list {
-    list-style: none;
-    font-size: 30px;
-    font-weight: bold;
+  transform: rotate(45deg) translate(-9px, -7px);
 }
 
 .mobile-navigation__link {
-    color: #fff;
-    text-decoration: none;
+  color: #fff;
+  text-decoration: none;
 }
 
 .mobile-navigation__menu-list {
-    display: block;
-    position: fixed;
-    visibility: hidden;
-    top: 0;
-    left: -100%;
-    margin: 0;
-    padding: 50px 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: #004578;
-    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
-    transition-duration: .4s;
+  position: fixed;
+  top: 0;
+  left: -100%;
+
+  display: block;
+
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 50px 0;
+
+  font-size: 30px;
+  font-weight: bold;
+  list-style: none;
+
+  visibility: hidden;
+  background-color: #004578;
+  box-shadow: 1px 0 6px rgb(0 0 0 / 20%);
+
+  transition-duration: 0.4s;
 }
 
 .mobile-navigation__menu-list_open {
-    visibility: visible;
-    top: 0;
-    left: 0;
+  top: 0;
+  left: 0;
+  visibility: visible;
 }
 
 .mobile-navigation__menu-item {
-    margin: 20px 0 20px 16px;
+  margin: 20px 0 20px 16px;
 }
-

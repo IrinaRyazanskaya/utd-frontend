@@ -1,88 +1,88 @@
 .contacts {
-    margin: 16px 0 0 50px;
-    color: #3E4B5B;
+  margin: 16px 0 0 50px;
+  color: #3e4b5b;
 }
 
 .contacts__header {
-    font-size: 30px;
-    margin-bottom: 16px;
+  margin-bottom: 16px;
+  font-size: 30px;
 }
 
 .contacts__container {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
 }
 
 .contacts__link,
 .contacts__address {
-    display: inline-block;
-    margin-top: 12px;
+  display: inline-block;
+  margin-top: 12px;
 }
 
 .contacts__link {
-    color: #2B88D8;
-    text-underline-offset: 3px;
+  color: #2b88d8;
+  text-underline-offset: 3px;
 }
 
 .contacts__link:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .contacts__address {
-    font-style: normal;
+  font-style: normal;
 }
 
 .contacts__opening-hours-list {
-    margin: 6px 0 16px 0;
-    padding-left: 17px;
+  margin: 6px 0 16px;
+  padding-left: 17px;
 }
 
 .contacts__opening-hours {
-    line-height: 28px;
+  line-height: 28px;
 }
 
 .contacts__label-map {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .contacts__map-container {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .contacts__map {
-    width: 700px;
-    height: 450px;
+  width: 700px;
+  height: 450px;
 }
 
-@media (max-width: 767px) {
-    .contacts {
-        margin: 0 16px;
-        font-size: 14px;
-    }
+@media (width <= 767px) {
+  .contacts {
+    margin: 0 16px;
+    font-size: 14px;
+  }
 
-    .contacts__container {
-        margin-bottom: 18px;
-    }
+  .contacts__container {
+    margin-bottom: 18px;
+  }
 
-    .contacts__opening-hours {
-        line-height: 24px;
-    }
+  .contacts__opening-hours {
+    line-height: 24px;
+  }
 
-    .contacts__header {
-        font-size: 22px;
-        margin-bottom: 16px;
-    }
+  .contacts__header {
+    margin-bottom: 16px;
+    font-size: 22px;
+  }
 
-    .contacts__map {
-        width: 350px;
-        height: 250px;
-    }
+  .contacts__map {
+    width: 350px;
+    height: 250px;
+  }
 }
 
-@media (max-width: 380px) {
-    .contacts__map {
-        width: 290px;
-        height: 230px;
-    }
+@media (width <= 380px) {
+  .contacts__map {
+    width: 290px;
+    height: 230px;
+  }
 }

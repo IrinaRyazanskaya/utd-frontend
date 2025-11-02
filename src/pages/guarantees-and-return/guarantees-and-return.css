@@ -1,93 +1,93 @@
 .guarantees {
-    margin: 0 40px;
-    padding-top: 6px;
-    color: #3E4B5B;
+  margin: 0 40px;
+  padding-top: 6px;
+  color: #3e4b5b;
 }
 
 .guarantees__header {
-    margin: 30px 0 16px 0;
-    font-size: 30px;
+  margin: 30px 0 16px;
+  font-size: 30px;
 }
 
 .guarantees__facts {
-    margin: 6px 0;
-    line-height: 28px;
+  margin: 6px 0;
+  line-height: 28px;
 }
 
 .guarantees__contacts-list {
-    margin: 0;
-    padding-left: 18px;
+  margin: 0;
+  padding-left: 18px;
 }
 
 .guarantees__contacts-label {
-    line-height: 24px;
+  line-height: 24px;
 }
 
 .guarantees__contact-link {
-    display: block;
-    margin: 10px 0;
+  display: block;
+  margin: 10px 0;
 }
 
 .guarantees__download-link {
-    margin-left: 22px;
+  margin-left: 22px;
 }
 
 .guarantees__contact-link,
 .guarantees__download-link {
-    color: #2B88D8;
-    text-underline-offset: 3px;
+  color: #2b88d8;
+  text-underline-offset: 3px;
 }
 
 .guarantees__contact-link:hover,
 .guarantees__download-link:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .guarantees__rules-list {
-    margin: 8px 0;
-    line-height: 30px;
+  margin: 8px 0;
+  line-height: 30px;
 }
 
 .guarantees__explanations-list {
-    padding-left: 19px;
-    list-style-type: disc;
+  padding-left: 19px;
+  list-style-type: disc;
 }
 
 .guarantees__documents-list {
-    list-style-type: disc;
+  list-style-type: disc;
 }
 
-@media (max-width: 450px) {
-    .guarantees {
-        margin: 0 16px;
-    }
+@media (width <= 450px) {
+  .guarantees {
+    margin: 0 16px;
+  }
 
-    .guarantees__header {
-        margin: 8px 0 6px 0;
-        font-size: 22px;
-    }
+  .guarantees__header {
+    margin: 8px 0 6px;
+    font-size: 22px;
+  }
 
-    .guarantees__facts {
-        margin: 6px 0;
-    }
+  .guarantees__facts {
+    margin: 6px 0;
+  }
 
-    .guarantees__facts,
-    .guarantees__contact-link,
-    .guarantees__download-link,
-    .guarantees__rules-list {
-        font-size: 14px;
-        line-height: 22px;
-    }
+  .guarantees__facts,
+  .guarantees__contact-link,
+  .guarantees__download-link,
+  .guarantees__rules-list {
+    font-size: 14px;
+    line-height: 22px;
+  }
 
-    .guarantees__contact-link:first-of-type {
-        margin-top: 2px;
-    }
+  .guarantees__contact-link:first-of-type {
+    margin-top: 2px;
+  }
 
-    .guarantees__rules-list {
-        padding-left: 30px;
-    }
+  .guarantees__rules-list {
+    padding-left: 30px;
+  }
 
-    .guarantees__download-link {
-        margin-left: 14px;
-    }
+  .guarantees__download-link {
+    margin-left: 14px;
+  }
 }

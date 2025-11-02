@@ -1,11 +1,8 @@
 .request-modal-blackout {
   position: fixed;
   z-index: 1000;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.2);
+  inset: 0;
+  background-color: rgb(0 0 0 / 20%);
 }
 
 .request-modal {
@@ -13,33 +10,39 @@
   z-index: 1001;
   top: 49%;
   left: 50%;
+
   width: 600px;
   height: 630px;
   margin-top: -315px;
   margin-left: -300px;
   padding-top: 16px;
-  font-family: "Arial", sans-serif;
+
+  font-family: Arial, sans-serif;
   color: #3e4b5b;
+
   background-color: #fff;
-  box-shadow: 0px 0px 14px 2px rgba(62, 75, 91, 0.2);
+  box-shadow: 0 0 14px 2px rgb(62 75 91 / 20%);
 }
 
 .request-modal__close-button {
+  cursor: pointer;
+
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin: 0 16px 0 auto;
-  padding: 0;
+  justify-content: center;
+
   width: 30px;
   height: 30px;
-  background-color: rgb(196, 196, 196, 0.8);
-  border-radius: 50%;
+  margin: 0 16px 0 auto;
+  padding: 0;
   border: none;
-  cursor: pointer;
+  border-radius: 50%;
+
+  background-color: rgb(196 196 196 / 80%);
 }
 
 .request-modal__close-button:hover {
-  background-color: rgb(196, 196, 196, 0.5);
+  background-color: rgb(196 196 196 / 50%);
 }
 
 .request-modal__close-button:focus {
@@ -48,9 +51,9 @@
 
 .request-modal__header {
   width: 270px;
+  margin: 0 auto 20px;
   font-size: 30px;
   font-weight: bold;
-  margin: 0 auto 20px auto;
 }
 
 .request-modal__form {
@@ -61,70 +64,81 @@
 .request-modal__field,
 .request-modal__comment {
   margin: 8px 0;
-  color: #3e4b5b;
-  background-color: rgba(196, 196, 196, 0.1);
-  border: 1px solid rgba(196, 196, 196, 0.7);
+  border: 1px solid rgb(196 196 196 / 70%);
   border-radius: 2px;
-  -webkit-appearance: none;
+
+  color: #3e4b5b;
+
+  appearance: none;
+  background-color: rgb(196 196 196 / 10%);
 }
 
 .request-modal__field-file {
-  opacity: 0;
-  visibility: hidden;
   position: absolute;
+  visibility: hidden;
+  opacity: 0;
 }
 
 .request-modal__file-wrapper {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+
   margin: 8px 0;
-  color: rgba(62, 75, 91, 0.7);
+
+  color: rgb(62 75 91 / 70%);
   text-overflow: ellipsis;
 }
 
 .request-modal__file-name {
+  overflow: hidden;
   display: flex;
   align-items: center;
-  padding: 1px 5px 1px 10px;
+
   width: 370px;
   height: 26px;
-  background-color: rgba(196, 196, 196, 0.1);
-  border: 1px solid rgba(196, 196, 196, 0.7);
-  border-radius: 2px 0 0 2px;
+  padding: 1px 5px 1px 10px;
+  border: 1px solid rgb(196 196 196 / 70%);
   border-right: none;
-  overflow: hidden;
+  border-radius: 2px 0 0 2px;
+
   text-overflow: ellipsis;
   white-space: nowrap;
+
+  background-color: rgb(196 196 196 / 10%);
 }
 
 .request-modal__file-button {
+  cursor: pointer;
+
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+
   width: 84px;
   height: 30px;
-  color: #fff;
-  background-color: #004578;
   border-radius: 0 2px 2px 0;
-  cursor: pointer;
+
+  color: #fff;
+
+  background-color: #004578;
 }
 
 .request-modal__field {
-  padding-left: 10px;
   width: 446px;
   height: 26px;
+  padding-left: 10px;
 }
 
 .request-modal__comment {
+  resize: none;
   width: 438px;
   padding: 10px;
-  resize: none;
 }
 
 .request-modal__field:focus,
 .request-modal__comment:focus {
-  border-color: rgba(0, 90, 158, 0.7);
+  border-color: rgb(0 90 158 / 70%);
   outline: none;
 }
 
@@ -137,7 +151,7 @@
 }
 
 .request-modal__form-text {
-  margin: 0px 0 14px 0;
+  margin: 0 0 14px;
 }
 
 .request-modal__form-link {
@@ -150,22 +164,25 @@
 }
 
 .request-modal__button-container {
-  margin: 0 auto;
   width: 142px;
+  margin: 0 auto;
 }
 
 .request-modal__send-button,
 .request-modal__failure-button {
-  font-size: 18px;
-  line-height: 22px;
-  color: #fff;
-  font-weight: bold;
-  background-color: #004578;
+  cursor: pointer;
+
   border: none;
   border-radius: 4px;
-  cursor: pointer;
+
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 22px;
+  color: #fff;
+
+  appearance: none;
+  background-color: #004578;
   outline: none;
-  -webkit-appearance: none;
 }
 
 .request-modal__send-button {
@@ -181,7 +198,7 @@
 .request-modal__send-button:hover,
 .request-modal__file-button:hover,
 .request-modal__failure-button:hover {
-  background-color: rgba(0, 69, 120, 0.7);
+  background-color: rgb(0 69 120 / 70%);
 }
 
 .request-modal__failure,
@@ -190,6 +207,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
   font-size: 26px;
   text-align: center;
 }
@@ -212,11 +230,12 @@
 }
 
 .request-modal__loader {
+  width: 120px;
+  height: 120px;
   border: 16px solid #004578;
   border-top: 16px solid #fff;
   border-radius: 50%;
-  width: 120px;
-  height: 120px;
+
   animation: spin 2.5s linear infinite;
 }
 
@@ -224,12 +243,13 @@
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
 }
 
-@media (max-width: 767px) {
+@media (width <= 767px) {
   .request-modal {
     width: 290px;
     height: 460px;
@@ -239,9 +259,9 @@
   }
 
   .request-modal__close-button {
-    margin-right: 10px;
     width: 22px;
     height: 22px;
+    margin-right: 10px;
   }
 
   .request-modal__close-icon {
@@ -250,8 +270,8 @@
 
   .request-modal__header {
     width: 198px;
+    margin: 4px auto 10px;
     font-size: 22px;
-    margin: 4px auto 10px auto;
   }
 
   .request-modal__form {
@@ -263,9 +283,9 @@
   }
 
   .request-modal__file-name {
-    padding: 1px 2px 1px 4px;
     width: 180px;
     height: 18px;
+    padding: 1px 2px 1px 4px;
     font-size: 14px;
   }
 
@@ -280,21 +300,21 @@
   }
 
   .request-modal__field {
-    margin: 4px 0;
-    padding-left: 4px;
     width: 232px;
     height: 18px;
+    margin: 4px 0;
+    padding-left: 4px;
   }
 
   .request-modal__comment {
-    margin: 4px 0;
-    padding: 4px;
     width: 232px;
     height: 50px;
+    margin: 4px 0;
+    padding: 4px;
   }
 
   .request-modal__form-text {
-    margin: 0 0 6px 0;
+    margin: 0 0 6px;
     font-size: 10px;
     line-height: 12px;
   }
@@ -308,14 +328,12 @@
   }
 
   .request-modal__send-button {
-    font-size: 14px;
-  }
-
-  .request-modal__send-button {
     width: 108px;
     height: 36px;
-    text-align: center;
     padding: 0;
+
+    font-size: 14px;
+    text-align: center;
   }
 
   .request-modal__failure,

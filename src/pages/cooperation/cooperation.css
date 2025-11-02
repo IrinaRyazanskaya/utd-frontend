@@ -1,99 +1,99 @@
 .cooperation {
-    color: #3E4B5B;
-    margin: 0 40px;
-    padding-top: 16px;
+  margin: 0 40px;
+  padding-top: 16px;
+  color: #3e4b5b;
 }
 
 .cooperation__offer {
-    line-height: 28px;
-    margin: 6px 0;
+  margin: 6px 0;
+  line-height: 28px;
 }
 
 .cooperation__header {
-    margin: 20px 0 16px 0;
-    font-size: 30px;
+  margin: 20px 0 16px;
+  font-size: 30px;
 }
 
 .cooperation__cards,
 .cooperation__card {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .cooperation__advantages {
-    margin: 0 28px;
-    width: 244px;
+  width: 244px;
+  margin: 0 28px;
 }
 
 .cooperation__card:last-child .cooperation__advantages {
-    margin-right: 0;
-    width: 193px;
+  width: 193px;
+  margin-right: 0;
 }
 
 .cooperation__card:first-child .cooperation__advantages {
-    width: 193px;
+  width: 193px;
 }
 
 .cooperation__contact {
-    color: #2B88D8;
-    text-underline-offset: 3px;
+  color: #2b88d8;
+  text-underline-offset: 3px;
 }
 
 .cooperation__contact:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
-@media (max-width: 1128px) {
-    .cooperation__cards {
-        flex-wrap: wrap;
-    }
+@media (width <= 1128px) {
+  .cooperation__cards {
+    flex-wrap: wrap;
+  }
 
-    .cooperation__card:last-of-type {
-        margin: 16px 0;
-    }
+  .cooperation__card:last-of-type {
+    margin: 16px 0;
+  }
 }
 
-@media (max-width: 800px) {
-    .cooperation__card {
-        margin: 16px 0;
-    }
+@media (width <= 800px) {
+  .cooperation__card {
+    margin: 16px 0;
+  }
 
-    .cooperation__card:last-of-type {
-        margin: 12px 0;
-    }
+  .cooperation__card:last-of-type {
+    margin: 12px 0;
+  }
 
-    .cooperation__card:nth-last-of-type(2) {
-        margin: 0;
-    }
+  .cooperation__card:nth-last-of-type(2) {
+    margin: 0;
+  }
 }
 
-@media (max-width: 450px) {
-    .cooperation {
-        margin: 0 16px;
-        padding-top: 0;
-        font-size: 14px;
-    }
+@media (width <= 450px) {
+  .cooperation {
+    margin: 0 16px;
+    padding-top: 0;
+    font-size: 14px;
+  }
 
-    .cooperation__offer {
-        line-height: 22px;
-    }
+  .cooperation__offer {
+    line-height: 22px;
+  }
 
-    .cooperation__header {
-        margin: 16px 0 10px 0;
-        font-size: 22px;
-    }
+  .cooperation__header {
+    margin: 16px 0 10px;
+    font-size: 22px;
+  }
 
-    .cooperation__advantages {
-        margin: 0 0 0 14px;
-        font-size: 12px;
-        width: 184px;
-    }
+  .cooperation__advantages {
+    width: 184px;
+    margin: 0 0 0 14px;
+    font-size: 12px;
+  }
 
-    .cooperation__card {
-        margin: 12px 0;
-    }
+  .cooperation__card {
+    margin: 12px 0;
+  }
 
-    .cooperation__icon {
-        width: 55px;
-    }
+  .cooperation__icon {
+    width: 55px;
+  }
 }
