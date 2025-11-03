@@ -1,4 +1,4 @@
-import type { FC } from "react";
+import { type FC } from "react";
 import { useMediaQuery } from "react-responsive";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -8,6 +8,7 @@ import { Header } from "../components/header";
 import { MobileHeader } from "../components/mobile-header";
 import { MobileNavigation } from "../components/mobile-navigation";
 import { Navigation } from "../components/navigation";
+import { ScrollToTop } from "../components/scroll-to-top";
 import { About } from "../pages/about";
 import { Details } from "../pages/company-details";
 import { Contacts } from "../pages/contacts";
@@ -36,6 +37,7 @@ const Application: FC = () => {
         <Route path="/privacy" element={<Privacy />} />
       </Routes>
       <Footer />
+      <ScrollToTop />
     </BrowserRouter>
   );
 };
