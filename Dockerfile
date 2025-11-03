@@ -2,7 +2,7 @@ FROM node:22 AS builder
 
 WORKDIR /app
 
-COPY package.json package-lock.json ./
+COPY package.json package-lock.json .npmrc ./
 RUN npm ci
 
 COPY tsconfig*.json ./
@@ -17,7 +17,11 @@ FROM node:22-slim AS runtime
 ENV NODE_ENV=production
 WORKDIR /app
 
-RUN npm i -g serve
-COPY --from=builder /app/dist ./dist
+COPY package.json package-lock.json .npmrc ./
+RUN npm ci --omit=dev
 
-CMD ["serve", "-l", "3000", "./dist"]
+COPY --from=builder /app/dist ./dist
+COPY index.js ./index.js
+
+EXPOSE 3000
+CMD ["node", "index.js"]

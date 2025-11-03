@@ -367,3 +367,35 @@ const server = await createServer();
 server.listen(port, () => {
   console.log(`Server available at http://localhost:${port}`);
 });
+
+let isShuttingDown = false;
+
+const gracefullyCloseServer = (/** @type {NodeJS.Signals} */ signal) => {
+  if (isShuttingDown) {
+    return;
+  }
+
+  isShuttingDown = true;
+  console.log(`Received ${signal}, shutting down...`);
+
+  const forceExitTimer = setTimeout(() => {
+    console.warn("Shutdown timeout reached, exiting.");
+    process.exit(1);
+  }, 5000);
+  forceExitTimer.unref();
+
+  server.close((error) => {
+    if (error) {
+      console.error("Error closing HTTP server:", error);
+      process.exit(1);
+    }
+
+    clearTimeout(forceExitTimer);
+    console.log("HTTP server closed, exiting.");
+    process.exit(0);
+  });
+};
+
+process.on("SIGINT", gracefullyCloseServer);
+process.on("SIGTERM", gracefullyCloseServer);
+process.on("SIGQUIT", gracefullyCloseServer);
