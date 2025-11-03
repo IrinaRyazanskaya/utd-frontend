@@ -20,10 +20,12 @@ const Contacts: FC = () => {
     let isMounted = true;
 
     const loadLeaflet = async () => {
-      const module = await import("react-leaflet");
+      const reactLeaflet = await import("react-leaflet");
+      const { fixLeafletIcons } = await import("../../utils/fix-leaflet");
+      await fixLeafletIcons();
 
       if (isMounted) {
-        setLeaflet(module);
+        setLeaflet(reactLeaflet);
       }
     };
 
