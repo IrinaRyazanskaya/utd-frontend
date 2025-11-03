@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import { useMediaQuery } from "react-responsive";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { Divider } from "../components/divider";
 import { Footer } from "../components/footer";
@@ -25,32 +25,16 @@ const Application: FC = () => {
       {isMobile ? <MobileNavigation /> : <Navigation />}
       {isMobile ? <MobileHeader /> : <Header />}
       <Divider />
-      <Switch>
-        <Route path="/" exact>
-          <Home />
-        </Route>
-        <Route path="/about" exact>
-          <About />
-        </Route>
-        <Route path="/delivery" exact>
-          <Delivery />
-        </Route>
-        <Route path="/guarantees" exact>
-          <Guarantees />
-        </Route>
-        <Route path="/details" exact>
-          <Details />
-        </Route>
-        <Route path="/cooperation" exact>
-          <Cooperation />
-        </Route>
-        <Route path="/contacts" exact>
-          <Contacts />
-        </Route>
-        <Route path="/privacy" exact>
-          <Privacy />
-        </Route>
-      </Switch>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/delivery" element={<Delivery />} />
+        <Route path="/guarantees" element={<Guarantees />} />
+        <Route path="/details" element={<Details />} />
+        <Route path="/cooperation" element={<Cooperation />} />
+        <Route path="/contacts" element={<Contacts />} />
+        <Route path="/privacy" element={<Privacy />} />
+      </Routes>
       <Footer />
     </BrowserRouter>
   );

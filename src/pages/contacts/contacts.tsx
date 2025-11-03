@@ -4,7 +4,7 @@ import { MapContainer, TileLayer, Marker, ZoomControl } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import "./contacts.css";
 
-const officeLocation: [number, number] = [55.101390, 60.134400];
+const officeLocation: [number, number] = [55.10139, 60.1344];
 const tileUrlPattern = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
 
 const Contacts: FC = () => {

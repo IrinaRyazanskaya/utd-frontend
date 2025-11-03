@@ -3,6 +3,21 @@ import { NavLink, useLocation } from "react-router-dom";
 
 import "./navigation.css";
 
+const createNavLinkClassName = (baseClass: string, activeClass: string) => {
+  return ({ isActive }: { isActive: boolean }) => {
+    return isActive ? `${baseClass} ${activeClass}` : baseClass;
+  };
+};
+
+const itemLinkClassName = createNavLinkClassName(
+  "navigation__item-link",
+  "navigation__item-link_active",
+);
+const subMenuLinkClassName = createNavLinkClassName(
+  "navigation__sub-menu-link",
+  "navigation__sub-menu-link_active",
+);
+
 const Navigation: FC = () => {
   const location = useLocation();
   const customerPaths: readonly string[] = ["/delivery", "/guarantees", "/details"];
@@ -26,22 +41,12 @@ const Navigation: FC = () => {
     <nav className="navigation">
       <ul className="navigation__items">
         <li className="navigation__item">
-          <NavLink
-            className="navigation__item-link"
-            activeClassName="navigation__item-link_active"
-            to="/"
-            exact
-          >
+          <NavLink className={itemLinkClassName} to="/" end>
             Главная
           </NavLink>
         </li>
         <li className="navigation__item">
-          <NavLink
-            className="navigation__item-link"
-            activeClassName="navigation__item-link_active"
-            to="/about"
-            exact
-          >
+          <NavLink className={itemLinkClassName} to="/about" end>
             О компании
           </NavLink>
         </li>
@@ -59,32 +64,17 @@ const Navigation: FC = () => {
             <nav className="navigation__sub-menu">
               <ul className="navigation__sub-menu-items">
                 <li className="navigation__sub-menu-item">
-                  <NavLink
-                    className="navigation__sub-menu-link"
-                    activeClassName="navigation__sub-menu-link_active"
-                    to="/delivery"
-                    exact
-                  >
+                  <NavLink className={subMenuLinkClassName} to="/delivery" end>
                     Доставка и оплата
                   </NavLink>
                 </li>
                 <li className="navigation__sub-menu-item">
-                  <NavLink
-                    className="navigation__sub-menu-link"
-                    activeClassName="navigation__sub-menu-link_active"
-                    to="/guarantees"
-                    exact
-                  >
+                  <NavLink className={subMenuLinkClassName} to="/guarantees" end>
                     Гарантии и возврат
                   </NavLink>
                 </li>
                 <li className="navigation__sub-menu-item">
-                  <NavLink
-                    className="navigation__sub-menu-link"
-                    activeClassName="navigation__sub-menu-link_active"
-                    to="/details"
-                    exact
-                  >
+                  <NavLink className={subMenuLinkClassName} to="/details" end>
                     Реквизиты
                   </NavLink>
                 </li>
@@ -93,22 +83,12 @@ const Navigation: FC = () => {
           </details>
         </li>
         <li className="navigation__item">
-          <NavLink
-            className="navigation__item-link"
-            activeClassName="navigation__item-link_active"
-            to="/cooperation"
-            exact
-          >
+          <NavLink className={itemLinkClassName} to="/cooperation" end>
             Сотрудничество
           </NavLink>
         </li>
         <li className="navigation__item">
-          <NavLink
-            className="navigation__item-link"
-            activeClassName="navigation__item-link_active"
-            to="/contacts"
-            exact
-          >
+          <NavLink className={itemLinkClassName} to="/contacts" end>
             Контакты
           </NavLink>
         </li>

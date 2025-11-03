@@ -1,7 +1,6 @@
 import { useState } from "react";
 import type { FC } from "react";
 import { Link } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
 
 import { CallModal } from "../call-modal";
 import { RequestModal } from "../request-modal";
@@ -59,26 +58,26 @@ const Footer: FC = () => {
         {isCallModalOpen && <CallModal onClose={closeCallModal} />}
       </div>
       <div className="footer__links">
-        <HashLink className="footer__link" smooth to="/about#top">
+        <Link className="footer__link" to="/about">
           Информация о компании
-        </HashLink>
-        <HashLink className="footer__link" smooth to="/delivery#top">
+        </Link>
+        <Link className="footer__link" to="/delivery">
           Доставка и оплата
-        </HashLink>
-        <HashLink className="footer__link" smooth to="/guarantees#top">
+        </Link>
+        <Link className="footer__link" to="/guarantees">
           Гарантии и возврат
-        </HashLink>
+        </Link>
       </div>
       <div className="footer__links">
-        <HashLink className="footer__link" smooth to="/details#top">
+        <Link className="footer__link" to="/details">
           Реквизиты компании
-        </HashLink>
-        <HashLink className="footer__link" smooth to="/cooperation#top">
+        </Link>
+        <Link className="footer__link" to="/cooperation">
           Сотрудничество
-        </HashLink>
-        <HashLink className="footer__link" smooth to="/contacts#top">
+        </Link>
+        <Link className="footer__link" to="/contacts">
           Контактная информация
-        </HashLink>
+        </Link>
       </div>
       <div className="footer__contacts">
         <div className="footer__phones">
