@@ -9,7 +9,6 @@
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
 
     "noEmit": true,
-    "allowJs": true,
     "jsx": "react-jsx",
     "moduleDetection": "force",
     "moduleResolution": "bundler",
