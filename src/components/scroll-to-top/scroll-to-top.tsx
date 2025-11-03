@@ -5,6 +5,10 @@ const ScrollToTop: FC = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
+    if (!window) {
+      return;
+    }
+
     window.scrollTo({
       top: 0,
       left: 0,
