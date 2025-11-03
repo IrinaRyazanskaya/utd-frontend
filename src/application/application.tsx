@@ -1,6 +1,6 @@
 import { type FC } from "react";
 import { useMediaQuery } from "react-responsive";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import { Divider } from "../components/divider";
 import { Footer } from "../components/footer";
@@ -22,7 +22,7 @@ const Application: FC = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
 
   return (
-    <BrowserRouter>
+    <>
       {isMobile ? <MobileNavigation /> : <Navigation />}
       {isMobile ? <MobileHeader /> : <Header />}
       <Divider />
@@ -38,7 +38,7 @@ const Application: FC = () => {
       </Routes>
       <Footer />
       <ScrollToTop />
-    </BrowserRouter>
+    </>
   );
 };
 
