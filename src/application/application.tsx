@@ -1,5 +1,4 @@
 import { type FC } from "react";
-import { useMediaQuery } from "react-responsive";
 import { Routes, Route } from "react-router-dom";
 
 import { Divider } from "../components/divider";
@@ -18,13 +17,19 @@ import { Guarantees } from "../pages/guarantees-and-return";
 import { Home } from "../pages/home";
 import { Privacy } from "../pages/privacy";
 
-const Application: FC = () => {
-  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
+import "./application.css";
 
+const Application: FC = () => {
   return (
     <>
-      {isMobile ? <MobileNavigation /> : <Navigation />}
-      {isMobile ? <MobileHeader /> : <Header />}
+      <div className="application__page-header_desktop">
+        <Navigation />
+        <Header />
+      </div>
+      <div className="application__page-header_mobile">
+        <MobileNavigation />
+        <MobileHeader />
+      </div>
       <Divider />
       <Routes>
         <Route path="/" element={<Home />} />
