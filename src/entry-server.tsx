@@ -1,15 +1,15 @@
 import { StrictMode } from "react";
 import { StaticRouter } from "react-router";
-import { renderToString } from "react-dom/server";
+import { renderToPipeableStream, type PipeableStream } from "react-dom/server";
 
 import { Application } from "./application";
 
 type RenderResult = {
-  html: string;
+  stream: PipeableStream;
 };
 
 function render(url: string): RenderResult {
-  const html = renderToString(
+  const stream = renderToPipeableStream(
     <StrictMode>
       <StaticRouter location={url}>
         <Application />
@@ -17,7 +17,7 @@ function render(url: string): RenderResult {
     </StrictMode>,
   );
 
-  return { html };
+  return { stream };
 }
 
 export { render };
