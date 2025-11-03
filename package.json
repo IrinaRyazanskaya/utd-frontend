@@ -6,6 +6,7 @@
   "scripts": {
     "start": "vite",
     "build": "vite build",
+    "build-check": "tsc -b",
     "preview": "vite preview",
     "format": "prettier --write .",
     "format-check": "prettier --check .",
