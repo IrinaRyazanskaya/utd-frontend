@@ -1,11 +1,10 @@
 import { useState } from "react";
 import type { FC } from "react";
-import { HashLink } from "react-router-hash-link";
+import { Link } from "react-router-dom";
 
 import { CallModal } from "../../components/call-modal";
 import { Divider } from "../../components/divider";
 import { RequestModal } from "../../components/request-modal";
-
 import "./home.css";
 import iconCallSrc from "./call-icon.svg";
 import iconDetailSrc from "./detail-icon.svg";
@@ -65,9 +64,9 @@ const Home: FC = () => {
           <p className="home__text">
             У нас Вы можете приобрести запчасти к автомобилям УРАЛ собственного производства, а
             также запчасти для&nbsp;
-            <HashLink className="home__link" smooth to="/about#top">
+            <Link className="home__link" to="/about">
               других
-            </HashLink>
+            </Link>
             &nbsp;грузовых автомобилей от проверенных поставщиков. Все запчасти собственного
             производства проходят полный технологический цикл, работоспособность проверяется на
             стендах.

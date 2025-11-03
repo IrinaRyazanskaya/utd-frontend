@@ -1,11 +1,13 @@
 import type { FC } from "react";
-import { Map, Placemark, GeolocationControl, ZoomControl } from "react-yandex-maps";
+import { MapContainer, TileLayer, Marker, ZoomControl } from "react-leaflet";
 
+import "leaflet/dist/leaflet.css";
 import "./contacts.css";
 
-const Contacts: FC = () => {
-  const officeLocation: [number, number] = [55.105233, 60.133198];
+const officeLocation: [number, number] = [55.10139, 60.1344];
+const tileUrlPattern = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
 
+const Contacts: FC = () => {
   return (
     <article className="contacts">
       <h2 className="contacts__header">Контакты компании ООО&nbsp;ТД&nbsp;«УралТехДеталь»</h2>
@@ -58,11 +60,18 @@ const Contacts: FC = () => {
       </div>
       <strong className="contacts__label-map">Схема проезда</strong>
       <div className="contacts__map-container">
-        <Map className="contacts__map" defaultState={{ center: officeLocation, zoom: 17 }}>
-          <Placemark geometry={officeLocation} />
-          <GeolocationControl options={{ float: "left" }} />
-          <ZoomControl options={{ float: "right" }} />
-        </Map>
+        <MapContainer
+          zoom={16}
+          zoomControl={false}
+          scrollWheelZoom={true}
+          attributionControl={false}
+          center={officeLocation}
+          style={{ width: "100%", height: "100%" }}
+        >
+          <TileLayer url={tileUrlPattern} maxZoom={19} />
+          <Marker position={officeLocation} />
+          <ZoomControl position="topright" />
+        </MapContainer>
       </div>
     </article>
   );

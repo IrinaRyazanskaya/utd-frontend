@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import { HashLink } from "react-router-hash-link";
+import { Link } from "react-router-dom";
 
 import "./delivery.css";
 import cardIconArrow from "./arrow-icon.svg";
@@ -200,9 +200,9 @@ const Delivery: FC = () => {
         Для постоянных и надежных клиентов специальные условия рассрочки или отсрочки платежа, а
         также скидки — все условия индивидуальны и обсуждаются с менеджером.
       </p>
-      <HashLink className="delivery__button-link" smooth to="/details#top">
+      <Link className="delivery__button-link" to="/details">
         РЕКВИЗИТЫ
-      </HashLink>
+      </Link>
       <h2 className="delivery__header delivery__last-header">Как происходит заказ?</h2>
       <div className="delivery__cards">
         <div className="delivery__card">

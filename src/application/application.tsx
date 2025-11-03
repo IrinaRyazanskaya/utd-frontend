@@ -1,7 +1,6 @@
-import type { FC } from "react";
+import { type FC } from "react";
 import { useMediaQuery } from "react-responsive";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { YMaps } from "react-yandex-maps";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { Divider } from "../components/divider";
 import { Footer } from "../components/footer";
@@ -9,6 +8,7 @@ import { Header } from "../components/header";
 import { MobileHeader } from "../components/mobile-header";
 import { MobileNavigation } from "../components/mobile-navigation";
 import { Navigation } from "../components/navigation";
+import { ScrollToTop } from "../components/scroll-to-top";
 import { About } from "../pages/about";
 import { Details } from "../pages/company-details";
 import { Contacts } from "../pages/contacts";
@@ -22,40 +22,23 @@ const Application: FC = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
 
   return (
-    <YMaps>
-      <BrowserRouter>
-        {isMobile ? <MobileNavigation /> : <Navigation />}
-        {isMobile ? <MobileHeader /> : <Header />}
-        <Divider />
-        <Switch>
-          <Route path="/" exact>
-            <Home />
-          </Route>
-          <Route path="/about" exact>
-            <About />
-          </Route>
-          <Route path="/delivery" exact>
-            <Delivery />
-          </Route>
-          <Route path="/guarantees" exact>
-            <Guarantees />
-          </Route>
-          <Route path="/details" exact>
-            <Details />
-          </Route>
-          <Route path="/cooperation" exact>
-            <Cooperation />
-          </Route>
-          <Route path="/contacts" exact>
-            <Contacts />
-          </Route>
-          <Route path="/privacy" exact>
-            <Privacy />
-          </Route>
-        </Switch>
-        <Footer />
-      </BrowserRouter>
-    </YMaps>
+    <BrowserRouter>
+      {isMobile ? <MobileNavigation /> : <Navigation />}
+      {isMobile ? <MobileHeader /> : <Header />}
+      <Divider />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/delivery" element={<Delivery />} />
+        <Route path="/guarantees" element={<Guarantees />} />
+        <Route path="/details" element={<Details />} />
+        <Route path="/cooperation" element={<Cooperation />} />
+        <Route path="/contacts" element={<Contacts />} />
+        <Route path="/privacy" element={<Privacy />} />
+      </Routes>
+      <Footer />
+      <ScrollToTop />
+    </BrowserRouter>
   );
 };
 
