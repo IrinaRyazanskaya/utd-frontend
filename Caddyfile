@@ -1,6 +1,0 @@
-utd174.ru {
-    file_server
-    root * /srv
-    encode zstd gzip
-    try_files {path} index.html
-}
