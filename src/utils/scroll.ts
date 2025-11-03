@@ -1,6 +1,3 @@
-import { useEffect } from "react";
-import { useLocation } from "react-router";
-
 const freezeScroll = (): void => {
   if (document.body) {
     document.body.style.overflow = "hidden";
