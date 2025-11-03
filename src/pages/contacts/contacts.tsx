@@ -1,13 +1,39 @@
 import type { FC } from "react";
-import { MapContainer, TileLayer, Marker, ZoomControl } from "react-leaflet";
+import { useEffect, useState } from "react";
 
 import "leaflet/dist/leaflet.css";
 import "./contacts.css";
+
+type LeafletModule = typeof import("react-leaflet");
 
 const officeLocation: [number, number] = [55.10139, 60.1344];
 const tileUrlPattern = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
 
 const Contacts: FC = () => {
+  const [leaflet, setLeaflet] = useState<LeafletModule | null>(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    let isMounted = true;
+
+    const loadLeaflet = async () => {
+      const module = await import("react-leaflet");
+
+      if (isMounted) {
+        setLeaflet(module);
+      }
+    };
+
+    void loadLeaflet();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
   return (
     <article className="contacts">
       <h2 className="contacts__header">Контакты компании ООО&nbsp;ТД&nbsp;«УралТехДеталь»</h2>
@@ -60,18 +86,20 @@ const Contacts: FC = () => {
       </div>
       <strong className="contacts__label-map">Схема проезда</strong>
       <div className="contacts__map-container">
-        <MapContainer
-          zoom={16}
-          zoomControl={false}
-          scrollWheelZoom={true}
-          attributionControl={false}
-          center={officeLocation}
-          style={{ width: "100%", height: "100%" }}
-        >
-          <TileLayer url={tileUrlPattern} maxZoom={19} />
-          <Marker position={officeLocation} />
-          <ZoomControl position="topright" />
-        </MapContainer>
+        {leaflet ? (
+          <leaflet.MapContainer
+            zoom={16}
+            zoomControl={false}
+            scrollWheelZoom={true}
+            attributionControl={false}
+            center={officeLocation}
+            style={{ width: "100%", height: "100%" }}
+          >
+            <leaflet.TileLayer url={tileUrlPattern} maxZoom={19} />
+            <leaflet.Marker position={officeLocation} />
+            <leaflet.ZoomControl position="topright" />
+          </leaflet.MapContainer>
+        ) : null}
       </div>
     </article>
   );

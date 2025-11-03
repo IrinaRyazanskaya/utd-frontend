@@ -122,21 +122,25 @@ async function tryServeStaticFile(requestUrl, res) {
  */
 async function createServer() {
   if (!isProduction) {
+    const server = http.createServer();
+
     const vite = await createViteServer({
       root,
       server: {
+        hmr: {
+          server: server,
+        },
         middlewareMode: true,
       },
       appType: "custom",
     });
 
-    return http.createServer((request, response) => {
+    server.on("request", (request, response) => {
       const requestUrl = request.url;
 
       if (!requestUrl) {
         response.statusCode = 400;
         response.end("Bad Request");
-
         return;
       }
 
@@ -147,7 +151,6 @@ async function createServer() {
 
           response.statusCode = 500;
           response.end(normalizedError.stack ?? normalizedError.message);
-
           return;
         }
 
@@ -166,6 +169,8 @@ async function createServer() {
         }
       });
     });
+
+    return server;
   }
 
   /** @type {SSRModule} */

@@ -5,7 +5,7 @@ const ScrollToTop: FC = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    if (!window) {
+    if (typeof window === "undefined") {
       return;
     }
 
