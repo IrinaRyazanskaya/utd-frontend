@@ -3,13 +3,19 @@ import { hydrateRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 
 import { Application } from "./application";
+import { setApiToken } from "./api/auth-token";
 
 import "./global-styles.css";
 
-const container = document.getElementById("root")!;
+const rootElement = document.getElementById("root")!;
+const apiTokenElement = document.getElementById("api-token")!;
+
+const token = apiTokenElement.textContent?.trim();
+apiTokenElement.remove();
+setApiToken(token);
 
 hydrateRoot(
-  container,
+  rootElement,
   <StrictMode>
     <BrowserRouter>
       <Application />

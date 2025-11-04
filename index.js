@@ -6,6 +6,7 @@ import { PassThrough } from "node:stream";
 import { pipeline } from "node:stream/promises";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
+import escapeHtml from "escape-html";
 import { createServer as createViteServer } from "vite";
 
 /**
@@ -19,9 +20,12 @@ import { createServer as createViteServer } from "vite";
  */
 
 const HTML_CONTENT_TYPE = "text/html";
+const SSR_CONTENT_PLACEHOLDER = "<!--ssr-content-->";
+const API_TOKEN_PLACEHOLDER = "<!--api-token-value-->";
 
 const isProduction = process.env["NODE_ENV"] === "production";
 const port = Number.parseInt(process.env["PORT"] ?? "3000", 10);
+const apiToken = process.env["API_TOKEN"] ?? "";
 
 const root = path.dirname(fileURLToPath(import.meta.url));
 const clientDistPath = path.resolve(root, "dist", "client");
@@ -44,8 +48,6 @@ const STATIC_CONTENT_TYPES = new Map([
   [".webmanifest", "application/manifest+json"],
   [".docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"],
 ]);
-
-const SSR_CONTENT_PLACEHOLDER = "<!--ssr-content-->";
 
 /**
  * Преобразует значение ошибки к экземпляру Error
@@ -72,6 +74,15 @@ function splitTemplate(template) {
     before: template.slice(0, placeholderIndex),
     after: template.slice(placeholderIndex + SSR_CONTENT_PLACEHOLDER.length),
   };
+}
+
+/**
+ * Подставляет значения переменных в HTML-шаблон
+ * @param {string} template
+ * @returns {string}
+ */
+function injectTemplateVariables(template) {
+  return template.replace(API_TOKEN_PLACEHOLDER, escapeHtml(apiToken));
 }
 
 /**
@@ -156,8 +167,10 @@ function pipeReactStream(stream, response) {
  */
 async function renderInDevelopment(vite, url, response) {
   const templatePath = path.resolve(root, "index.html");
+
   let template = await fs.readFile(templatePath, "utf-8");
   template = await vite.transformIndexHtml(url, template);
+  template = injectTemplateVariables(template);
 
   const { render } = /** @type {SSRModule} */ (await vite.ssrLoadModule("/src/entry-server.tsx"));
   const { stream } = await render(url);
@@ -315,7 +328,8 @@ async function createServer() {
   /** @type {SSRModule} */
   const { render } = await import(pathToFileURL(serverEntryPath).href);
 
-  const template = await fs.readFile(path.join(clientDistPath, "index.html"), "utf-8");
+  let template = await fs.readFile(path.join(clientDistPath, "index.html"), "utf-8");
+  template = injectTemplateVariables(template);
   const templateParts = splitTemplate(template);
 
   return http.createServer(async (request, response) => {

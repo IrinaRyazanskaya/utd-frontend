@@ -1,3 +1,5 @@
+import { getApiToken } from "./auth-token";
+
 type OrderCallPayload = {
   name: string;
   phone: string;
@@ -5,6 +7,7 @@ type OrderCallPayload = {
 
 const orderCall = (buyerName: string, buyerPhone: string): Promise<Response> => {
   const headers = new Headers();
+  headers.append("X-Auth-Token", getApiToken());
   headers.append("Content-Type", "application/json");
 
   const payload: OrderCallPayload = {
