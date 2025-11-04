@@ -1,8 +1,16 @@
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
+import { compression } from "vite-plugin-compression2";
 
 export default defineConfig(({ isSsrBuild }) => ({
-  plugins: [react()],
+  plugins: [
+    react(),
+    isSsrBuild
+      ? null
+      : compression({
+          algorithms: ["brotli"],
+        }),
+  ].filter(Boolean),
   assetsInclude: ["**/*.docx"],
   build: {
     outDir: isSsrBuild ? "dist/server" : "dist/client",

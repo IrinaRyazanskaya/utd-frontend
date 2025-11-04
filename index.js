@@ -213,41 +213,81 @@ async function sendFile(filePath, response) {
 
 /**
  * Пытается отдать статический файл
- * @param {string} requestUrl - URL запроса
+ * @param {http.IncomingMessage} request - HTTP запрос
  * @param {http.ServerResponse} response - HTTP ответ
  * @returns {Promise<"served" | "missing" | "not-static">}
  *  - "served"     - файл обработан
  *  - "missing"    - файл не найден
  *  - "not-static" - это не запрос за статикой
  */
-async function tryServeStaticFile(requestUrl, response) {
-  const { pathname } = new URL(requestUrl, "http://localhost");
-  const decodedPath = decodeURIComponent(pathname);
-  const absolutePath = path.resolve(clientDistPath, "." + decodedPath);
+async function tryServeStaticFile(request, response) {
+  const requestUrl = request.url;
 
-  const relativePath = path.relative(clientDistPath, absolutePath);
-  if (relativePath.startsWith("..") || path.isAbsolute(relativePath)) {
+  if (!requestUrl) {
     return "not-static";
   }
 
-  const extension = path.extname(absolutePath);
-  const contentType = STATIC_CONTENT_TYPES.get(extension) ?? null;
+  const { pathname } = new URL(requestUrl, "http://localhost");
+  const decodedPath = decodeURIComponent(pathname);
 
-  // Если расширение нам не знакомо — считаем, что это не наш статик
+  const originalExt = path.extname(decodedPath);
+  const contentType = STATIC_CONTENT_TYPES.get(originalExt) ?? null;
+
   if (!contentType) {
     return "not-static";
   }
 
-  let fileInfo;
-  try {
-    fileInfo = await fs.stat(absolutePath);
-  } catch (error) {
-    const err = /** @type {NodeJS.ErrnoException} */ (error);
-    if (err.code === "ENOENT") {
-      return "missing";
-    }
+  const absolutePath = path.resolve(clientDistPath, "." + decodedPath);
+  const relativePath = path.relative(clientDistPath, absolutePath);
 
-    throw error;
+  if (relativePath.startsWith("..") || path.isAbsolute(relativePath)) {
+    return "not-static";
+  }
+
+  const acceptEncodingHeader = String(request.headers["accept-encoding"] ?? "");
+
+  /** @type {{ path: string; contentEncoding: string | null }} */
+  let selectedFile = {
+    path: absolutePath,
+    contentEncoding: null,
+  };
+
+  async function tryStat(/** @type {string} **/ filePath) {
+    try {
+      const stat = await fs.stat(filePath);
+      return stat.isFile() ? stat : null;
+    } catch (error) {
+      const err = /** @type {NodeJS.ErrnoException} */ (error);
+      if (err.code === "ENOENT") {
+        return null;
+      }
+      throw error;
+    }
+  }
+
+  /** @type {import("node:fs").Stats | null} */
+  let fileInfo = null;
+
+  if (acceptEncodingHeader.includes("br")) {
+    const brPath = absolutePath + ".br";
+    const brStat = await tryStat(brPath);
+
+    if (brStat) {
+      selectedFile = { path: brPath, contentEncoding: "br" };
+      fileInfo = brStat;
+    }
+  }
+
+  if (!fileInfo) {
+    try {
+      fileInfo = await fs.stat(absolutePath);
+    } catch (error) {
+      const err = /** @type {NodeJS.ErrnoException} */ (error);
+      if (err.code === "ENOENT") {
+        return "missing";
+      }
+      throw error;
+    }
   }
 
   if (fileInfo.isDirectory()) {
@@ -263,7 +303,13 @@ async function tryServeStaticFile(requestUrl, response) {
   response.statusCode = 200;
   response.setHeader("Content-Type", contentType);
 
-  await sendFile(absolutePath, response);
+  response.setHeader("Vary", "Accept-Encoding");
+
+  if (selectedFile.contentEncoding) {
+    response.setHeader("Content-Encoding", selectedFile.contentEncoding);
+  }
+
+  await sendFile(selectedFile.path, response);
 
   return "served";
 }
@@ -348,7 +394,7 @@ async function createServer() {
     }
 
     try {
-      const staticResult = await tryServeStaticFile(requestUrl, response);
+      const staticResult = await tryServeStaticFile(request, response);
 
       if (staticResult === "served") {
         return;
