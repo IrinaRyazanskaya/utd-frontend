@@ -15,7 +15,7 @@
 
   height: 500px;
 
-  background-image: url("./main-image.png");
+  background-image: url("./main-image.webp");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -31,7 +31,7 @@
   margin-left: 70px;
   border-radius: 4px;
 
-  background-image: url("./rectangle.png");
+  background: linear-gradient(to right, #0b3d64 0%, #115383 50%, #1a6ba5 100%);
 }
 
 .home__company-name {
