@@ -19,7 +19,7 @@ const orderCall = (buyerName: string, buyerPhone: string): Promise<Response> => 
     redirect: "follow",
   };
 
-  return fetch("https://utd-backend.vercel.app/api/calls", requestOptions);
+  return fetch("/api/calls", requestOptions);
 };
 
 export { orderCall };

@@ -40,7 +40,7 @@ const applyRequest = (
     redirect: "follow",
   };
 
-  return fetch("https://utd-backend.vercel.app/api/requests", requestOptions);
+  return fetch("/api/requests", requestOptions);
 };
 
 export { applyRequest };
