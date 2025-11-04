@@ -5,9 +5,9 @@ import { CallModal } from "../call-modal";
 import { RequestModal } from "../request-modal";
 
 import "./header.css";
+import logoSrc from "./logo.webp";
 import iconCallSrc from "./call-icon.svg";
 import iconEmailSrc from "./email-icon.svg";
-import logoSrc from "./logo.png";
 import iconPhoneSrc from "./phone-icon.svg";
 import iconPriceSrc from "./price-icon.svg";
 import iconRequestSrc from "./request-icon.svg";

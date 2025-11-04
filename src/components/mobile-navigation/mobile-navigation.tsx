@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { freezeScroll, unfreezeScroll } from "../../utils/scroll";
 
 import "./mobile-navigation.css";
-import mobileLogoSrc from "./mobile-logo.png";
+import mobileLogoSrc from "./mobile-logo.webp";
 
 const MobileNavigation: FC = () => {
   const [isInputChecked, setInputChecked] = useState<boolean>(false);
