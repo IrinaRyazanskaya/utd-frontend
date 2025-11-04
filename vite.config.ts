@@ -23,6 +23,10 @@ export default defineConfig(({ isSsrBuild }) => ({
 }));
 
 function splitChunks(id: string): string {
+  if (id.includes("leaflet")) {
+    return "leaflet";
+  }
+
   if (id.includes("node_modules")) {
     return "vendor";
   }
