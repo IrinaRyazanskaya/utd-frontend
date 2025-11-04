@@ -1,41 +1,16 @@
 import type { FC } from "react";
-import { useEffect, useState } from "react";
+import { Suspense, lazy } from "react";
 
-import "leaflet/dist/leaflet.css";
 import "./contacts.css";
 
-type LeafletModule = typeof import("react-leaflet");
-
 const officeLocation: [number, number] = [55.10139, 60.1344];
-const tileUrlPattern = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
+
+const DynamicMap = lazy(async () => {
+  const { DynamicMap } = await import("../../components/dynamic-map");
+  return { default: DynamicMap };
+});
 
 const Contacts: FC = () => {
-  const [leaflet, setLeaflet] = useState<LeafletModule | null>(null);
-
-  useEffect(() => {
-    if (typeof window === "undefined") {
-      return;
-    }
-
-    let isMounted = true;
-
-    const loadLeaflet = async () => {
-      const reactLeaflet = await import("react-leaflet");
-      const { fixLeafletIcons } = await import("../../utils/fix-leaflet");
-      await fixLeafletIcons();
-
-      if (isMounted) {
-        setLeaflet(reactLeaflet);
-      }
-    };
-
-    void loadLeaflet();
-
-    return () => {
-      isMounted = false;
-    };
-  }, []);
-
   return (
     <article className="contacts">
       <h2 className="contacts__header">Контакты компании ООО&nbsp;ТД&nbsp;«УралТехДеталь»</h2>
@@ -88,20 +63,9 @@ const Contacts: FC = () => {
       </div>
       <strong className="contacts__label-map">Схема проезда</strong>
       <div className="contacts__map-container">
-        {leaflet ? (
-          <leaflet.MapContainer
-            zoom={16}
-            zoomControl={false}
-            scrollWheelZoom={true}
-            attributionControl={false}
-            center={officeLocation}
-            style={{ width: "100%", height: "100%" }}
-          >
-            <leaflet.TileLayer url={tileUrlPattern} maxZoom={19} />
-            <leaflet.Marker position={officeLocation} />
-            <leaflet.ZoomControl position="topright" />
-          </leaflet.MapContainer>
-        ) : null}
+        <Suspense fallback={<div className="contacts__map-loader">Загружаем карту...</div>}>
+          <DynamicMap center={officeLocation} markerPosition={officeLocation} />
+        </Suspense>
       </div>
     </article>
   );
