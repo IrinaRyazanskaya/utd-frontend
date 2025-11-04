@@ -1,0 +1,17 @@
+.application__page-header_desktop {
+  display: block;
+}
+
+.application__page-header_mobile {
+  display: none;
+}
+
+@media (width <= 767px) {
+  .application__page-header_desktop {
+    display: none;
+  }
+
+  .application__page-header_mobile {
+    display: block;
+  }
+}

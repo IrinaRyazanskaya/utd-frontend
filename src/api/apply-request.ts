@@ -1,3 +1,5 @@
+import { getApiToken } from "./auth-token";
+
 type ApplyRequestPayload = {
   name: string;
   email: string;
@@ -12,6 +14,10 @@ const applyRequest = (
   comment: string,
   file: File | null,
 ): Promise<Response> => {
+  const headers = new Headers();
+  headers.append("X-Auth-Token", getApiToken());
+  headers.append("Content-Type", "multipart/form-data");
+
   const formData = new FormData();
 
   const payload: ApplyRequestPayload = {
@@ -36,11 +42,12 @@ const applyRequest = (
 
   const requestOptions: RequestInit = {
     method: "POST",
+    headers,
     body: formData,
     redirect: "follow",
   };
 
-  return fetch("https://utd-backend.vercel.app/api/requests", requestOptions);
+  return fetch("/api/requests", requestOptions);
 };
 
 export { applyRequest };

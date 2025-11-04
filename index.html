@@ -51,7 +51,8 @@
         />
       </div>
     </noscript>
-    <div id="root"></div>
-    <script type="module" src="/src/index.tsx"></script>
+    <div id="root"><!--ssr-content--></div>
+    <div id="api-token"><!--api-token-value--></div>
+    <script type="module" src="/src/entry-client.tsx"></script>
   </body>
 </html>
