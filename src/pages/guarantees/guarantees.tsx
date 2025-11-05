@@ -1,7 +1,7 @@
 import type { FC } from "react";
 
-import "./guarantees-and-return.css";
-import doc from "./Образец акта рекламации.docx";
+import "./guarantees.css";
+import claimReportSrc from "./claim-report.docx";
 
 const Guarantees: FC = () => {
   return (
@@ -68,7 +68,7 @@ const Guarantees: FC = () => {
           приложить накладную и счет фактуру на возврат.
         </li>
       </ol>
-      <a className="guarantees__download-link" href={doc} download>
+      <a className="guarantees__download-link" href={claimReportSrc} download>
         Скачать образец акта рекламации
       </a>
     </article>

@@ -1,6 +1,6 @@
 import type { FC } from "react";
 
-import "./company-details.css";
+import "./details.css";
 
 const Details: FC = () => {
   return (

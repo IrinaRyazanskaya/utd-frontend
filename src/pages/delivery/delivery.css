@@ -20,6 +20,10 @@
   flex-wrap: wrap;
 }
 
+.delivery__icon {
+  width: 65px;
+}
+
 .delivery__fact-card {
   margin: 0 40px 18px 0;
 }

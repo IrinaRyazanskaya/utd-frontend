@@ -5,6 +5,10 @@ import iconDetailSrc from "./detail-icon.svg";
 import iconPercentSrc from "./percent-icon.svg";
 import iconTruckSrc from "./truck-icon.svg";
 
+const COOPERATION_DETAIL_ICON_DIMENSIONS = { width: 100, height: 100 };
+const COOPERATION_TRUCK_ICON_DIMENSIONS = { width: 100, height: 120 };
+const COOPERATION_PERCENT_ICON_DIMENSIONS = { width: 100, height: 100 };
+
 const Cooperation: FC = () => {
   return (
     <article className="cooperation">
@@ -15,20 +19,38 @@ const Cooperation: FC = () => {
       </p>
       <div className="cooperation__cards">
         <div className="cooperation__card">
-          <img className="cooperation__icon" src={iconDetailSrc} alt="Иконка запчасти" />
+          <img
+            className="cooperation__icon"
+            src={iconDetailSrc}
+            alt="Иконка запчасти"
+            width={COOPERATION_DETAIL_ICON_DIMENSIONS.width}
+            height={COOPERATION_DETAIL_ICON_DIMENSIONS.height}
+          />
           <p className="cooperation__advantages">
             Более 300 наименований запчастей в наличии на складе
           </p>
         </div>
         <div className="cooperation__card">
-          <img className="cooperation__icon" src={iconTruckSrc} alt="Иконка грузовика" />
+          <img
+            className="cooperation__icon"
+            src={iconTruckSrc}
+            alt="Иконка грузовика"
+            width={COOPERATION_TRUCK_ICON_DIMENSIONS.width}
+            height={COOPERATION_TRUCK_ICON_DIMENSIONS.height}
+          />
           <p className="cooperation__advantages">
             Отгрузка заказа осуществляется на следующий день от подачи заявки, при условии наличия
             товара на складе
           </p>
         </div>
         <div className="cooperation__card">
-          <img className="cooperation__icon" src={iconPercentSrc} alt="Иконка процента" />
+          <img
+            className="cooperation__icon"
+            src={iconPercentSrc}
+            alt="Иконка процента"
+            width={COOPERATION_PERCENT_ICON_DIMENSIONS.width}
+            height={COOPERATION_PERCENT_ICON_DIMENSIONS.height}
+          />
           <p className="cooperation__advantages">
             Для постоянных клиентов специальные условия рассрочки или отсрочки платежа, а также
             скидки

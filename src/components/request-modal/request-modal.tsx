@@ -10,6 +10,9 @@ import iconSuccessSrc from "./success-icon.svg";
 
 type RequestState = "unknown" | "pending" | "success" | "failure";
 
+const REQUEST_MODAL_STATE_ICON_DIMENSIONS = { width: 250, height: 250 };
+const REQUEST_MODAL_CLOSE_ICON_DIMENSIONS = { width: 16, height: 16 };
+
 type RequestModalProps = {
   onClose: () => void;
 };
@@ -153,7 +156,13 @@ const RequestModal: FC<RequestModalProps> = ({ onClose }) => {
   const success = (
     <div className="request-modal__success">
       <p className="request-modal__success-text">Заявка отправлена</p>
-      <img className="request-modal__success-icon" src={iconSuccessSrc} alt="Галочка в круге" />
+      <img
+        className="request-modal__success-icon"
+        src={iconSuccessSrc}
+        alt="Галочка в круге"
+        width={REQUEST_MODAL_STATE_ICON_DIMENSIONS.width}
+        height={REQUEST_MODAL_STATE_ICON_DIMENSIONS.height}
+      />
       <p>Скоро мы с Вами свяжемся</p>
     </div>
   );
@@ -161,7 +170,13 @@ const RequestModal: FC<RequestModalProps> = ({ onClose }) => {
   const failure = (
     <div className="request-modal__failure">
       <p className="request-modal__failure-text">Что-то пошло не так</p>
-      <img className="request-modal__failure-icon" src={iconFailureSrc} alt="Грустный смайлик" />
+      <img
+        className="request-modal__failure-icon"
+        src={iconFailureSrc}
+        alt="Грустный смайлик"
+        width={REQUEST_MODAL_STATE_ICON_DIMENSIONS.width}
+        height={REQUEST_MODAL_STATE_ICON_DIMENSIONS.height}
+      />
       <p>Не получилось отправить Вашу заявку</p>
       <button
         className="request-modal__failure-button"
@@ -191,7 +206,13 @@ const RequestModal: FC<RequestModalProps> = ({ onClose }) => {
       <div className="request-modal-blackout" />
       <div className="request-modal">
         <button className="request-modal__close-button" onClick={onClose}>
-          <img className="request-modal__close-icon" src={iconCrossSrc} alt="Иконка крестика" />
+          <img
+            className="request-modal__close-icon"
+            src={iconCrossSrc}
+            alt="Иконка крестика"
+            width={REQUEST_MODAL_CLOSE_ICON_DIMENSIONS.width}
+            height={REQUEST_MODAL_CLOSE_ICON_DIMENSIONS.height}
+          />
         </button>
         {content}
       </div>

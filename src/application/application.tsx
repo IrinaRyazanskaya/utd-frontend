@@ -9,11 +9,11 @@ import { MobileNavigation } from "../components/mobile-navigation";
 import { Navigation } from "../components/navigation";
 import { ScrollToTop } from "../components/scroll-to-top";
 import { About } from "../pages/about";
-import { Details } from "../pages/company-details";
 import { Contacts } from "../pages/contacts";
 import { Cooperation } from "../pages/cooperation";
-import { Delivery } from "../pages/delivery-and-payment";
-import { Guarantees } from "../pages/guarantees-and-return";
+import { Delivery } from "../pages/delivery";
+import { Details } from "../pages/details";
+import { Guarantees } from "../pages/guarantees";
 import { Home } from "../pages/home";
 import { Privacy } from "../pages/privacy";
 

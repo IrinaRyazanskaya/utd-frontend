@@ -18,6 +18,12 @@ import iconRequestSrc from "./request-icon.svg";
 import iconTrophySrc from "./trophy-icon.svg";
 import iconTruckSrc from "./truck-icon.svg";
 
+const HOME_PRICE_ICON_DIMENSIONS = { width: 16, height: 18 };
+const HOME_ACTION_ICON_DIMENSIONS = { width: 18, height: 18 };
+const HOME_ADVANTAGE_ICON_DIMENSIONS = { width: 116, height: 116 };
+const HOME_OFFER_ICON_DIMENSIONS = { width: 100, height: 100 };
+const HOME_TRUCK_ICON_DIMENSIONS = { width: 110, height: 100 };
+
 const Home: FC = () => {
   const [isRequestModalOpen, setRequestModalOpen] = useState(false);
 
@@ -46,12 +52,10 @@ const Home: FC = () => {
           <div className="home__main-card">
             <h1 className="home__company-name">УРАЛТЕХДЕТАЛЬ</h1>
             <ul className="home__facts-list">
-              <li className="home__fact">производство запчастейк к а/м урал</li>
-              <li className="home__fact">
-                поставка запчастей для отечественного грузового автотранспорт
-              </li>
               <li className="home__fact">металлообработка</li>
+              <li className="home__fact">производство запчастей к а/м урал</li>
               <li className="home__fact">капитальный ремонт узлов и агрегатов</li>
+              <li className="home__fact">запчасти для отечественного грузового автотранспорта</li>
             </ul>
           </div>
         </div>
@@ -75,7 +79,7 @@ const Home: FC = () => {
           <h2 className="home__header">Все виды металлообработки.</h2>
           <p className="home__text">
             Имеющийся станочный парк разнообразного металлообрабатывающего оборудования с ЧПУ
-            (токарного, фрезерного, электроэррозионного), позволяет выполнять любые нестандартные
+            (токарного, фрезерного, электроэрозионного), позволяет выполнять любые нестандартные
             работы по всем видам металлообработки по Вашим чертежам и техническим заданиям.
           </p>
         </div>
@@ -86,16 +90,34 @@ const Home: FC = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <img className="home__action-icon" src={iconPriceSrc} alt="Иконка прайс-листа" />
+            <img
+              className="home__action-icon"
+              src={iconPriceSrc}
+              alt="Иконка прайс-листа"
+              width={HOME_PRICE_ICON_DIMENSIONS.width}
+              height={HOME_PRICE_ICON_DIMENSIONS.height}
+            />
             <span className="home__price-list">СМОТРЕТЬ ПРАЙС-ЛИСТ</span>
           </a>
           <button className="home__action-button" onClick={handleRequestClick}>
-            <img className="home__action-icon" src={iconRequestSrc} alt="Иконка отправки заявки" />
+            <img
+              className="home__action-icon"
+              src={iconRequestSrc}
+              alt="Иконка отправки заявки"
+              width={HOME_ACTION_ICON_DIMENSIONS.width}
+              height={HOME_ACTION_ICON_DIMENSIONS.height}
+            />
             ОТПРАВИТЬ ЗАЯВКУ
           </button>
           {isRequestModalOpen && <RequestModal onClose={closeRequestModal} />}
           <button className="home__action-button" onClick={handleCallClick}>
-            <img className="home__action-icon" src={iconCallSrc} alt="Иконка заказа звонка" />
+            <img
+              className="home__action-icon"
+              src={iconCallSrc}
+              alt="Иконка заказа звонка"
+              width={HOME_ACTION_ICON_DIMENSIONS.width}
+              height={HOME_ACTION_ICON_DIMENSIONS.height}
+            />
             ЗАКАЗАТЬ ЗВОНОК
           </button>
           {isCallModalOpen && <CallModal onClose={closeCallModal} />}
@@ -116,15 +138,33 @@ const Home: FC = () => {
         </div>
         <div className="home__advantages-container">
           <div className="home__advantage">
-            <img className="home__advantage-icon" src={iconTrophySrc} alt="Иконка с кубком" />
+            <img
+              className="home__advantage-icon"
+              src={iconTrophySrc}
+              alt="Иконка с кубком"
+              width={HOME_ADVANTAGE_ICON_DIMENSIONS.width}
+              height={HOME_ADVANTAGE_ICON_DIMENSIONS.height}
+            />
             <p className="home__advantage-text">Более 15 лет на рынке автозапчастей</p>
           </div>
           <div className="home__advantage">
-            <img className="home__advantage-icon" src={iconMachineSrc} alt="Иконка со станком" />
+            <img
+              className="home__advantage-icon"
+              src={iconMachineSrc}
+              alt="Иконка со станком"
+              width={HOME_ADVANTAGE_ICON_DIMENSIONS.width}
+              height={HOME_ADVANTAGE_ICON_DIMENSIONS.height}
+            />
             <p className="home__advantage-text">4 станка для металлообработки</p>
           </div>
           <div className="home__advantage">
-            <img className="home__advantage-icon" src={iconDetailSrc} alt="Иконка с деталью" />
+            <img
+              className="home__advantage-icon"
+              src={iconDetailSrc}
+              alt="Иконка с деталью"
+              width={HOME_ADVANTAGE_ICON_DIMENSIONS.width}
+              height={HOME_ADVANTAGE_ICON_DIMENSIONS.height}
+            />
             <p className="home__advantage-text">
               Более 300 наименований запчастей в наличии на складе
             </p>
@@ -136,7 +176,13 @@ const Home: FC = () => {
         <h2 className="home__header">Мы рады предложить Вам</h2>
         <div className="home__offers-container">
           <div className="home__offer">
-            <img className="home__offer-icon" src={iconMapSrc} alt="Иконка с картой" />
+            <img
+              className="home__offer-icon"
+              src={iconMapSrc}
+              alt="Иконка с картой"
+              width={HOME_OFFER_ICON_DIMENSIONS.width}
+              height={HOME_OFFER_ICON_DIMENSIONS.height}
+            />
             <p className="home__offer-text">
               Отправку заказов в любые регионы России и Ближнего Зарубежья любым удобным для Вас
               способом
@@ -147,6 +193,8 @@ const Home: FC = () => {
               className="home__offer-icon"
               src={iconPercentSrc}
               alt="Иконка со знаком процента"
+              width={HOME_OFFER_ICON_DIMENSIONS.width}
+              height={HOME_OFFER_ICON_DIMENSIONS.height}
             />
             <p className="home__offer-text">
               Специальные условия рассрочки или отсрочки платежа, а также скидки для постоянных
@@ -154,7 +202,13 @@ const Home: FC = () => {
             </p>
           </div>
           <div className="home__offer">
-            <img className="home__offer-icon" src={iconTruckSrc} alt="Иконка с грузовиком" />
+            <img
+              className="home__offer-icon"
+              src={iconTruckSrc}
+              alt="Иконка с грузовиком"
+              width={HOME_TRUCK_ICON_DIMENSIONS.width}
+              height={HOME_TRUCK_ICON_DIMENSIONS.height}
+            />
             <p className="home__offer-text">
               Бесплатную доставку нашим транспортом по Миассу и до транспортных компаний оптовым
               покупателям
@@ -165,6 +219,8 @@ const Home: FC = () => {
               className="home__offer-icon"
               src={iconGuaranteeSrc}
               alt="Иконка с большим пальцем вверх"
+              width={HOME_OFFER_ICON_DIMENSIONS.width}
+              height={HOME_OFFER_ICON_DIMENSIONS.height}
             />
             <p className="home__offer-text">Гарантию на весь ассортимент продукции</p>
           </div>
