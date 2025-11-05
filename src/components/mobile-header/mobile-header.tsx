@@ -12,6 +12,11 @@ import iconPriceSrc from "./price-icon.svg";
 import iconRequestSrc from "./request-icon.svg";
 import iconSmartphoneSrc from "./smartphone-icon.svg";
 
+const MOBILE_HEADER_CONTACT_ICON_DIMENSIONS = { width: 12, height: 12 };
+const MOBILE_HEADER_PRICE_ICON_DIMENSIONS = { width: 10, height: 11 };
+const MOBILE_HEADER_REQUEST_ICON_DIMENSIONS = { width: 11, height: 11 };
+const MOBILE_HEADER_CALL_ICON_DIMENSIONS = { width: 11, height: 11 };
+
 const MobileHeader: FC = () => {
   const [isRequestModalOpen, setRequestModalOpen] = useState(false);
 
@@ -38,7 +43,13 @@ const MobileHeader: FC = () => {
       <div className="mobile-header__contacts">
         <div className="mobile-header__phones">
           <div className="mobile-header__phone">
-            <img className="mobile-header__phone-icon" src={iconPhoneSrc} alt="Иконка телефона" />
+            <img
+              className="mobile-header__phone-icon"
+              src={iconPhoneSrc}
+              alt="Иконка телефона"
+              width={MOBILE_HEADER_CONTACT_ICON_DIMENSIONS.width}
+              height={MOBILE_HEADER_CONTACT_ICON_DIMENSIONS.height}
+            />
             <a className="mobile-header__phone-number" href="tel:+73513264004">
               +7 (3513) 264-004
             </a>
@@ -48,6 +59,8 @@ const MobileHeader: FC = () => {
               className="mobile-header__phone-icon"
               src={iconSmartphoneSrc}
               alt="Иконка мобильного телефона"
+              width={MOBILE_HEADER_CONTACT_ICON_DIMENSIONS.width}
+              height={MOBILE_HEADER_CONTACT_ICON_DIMENSIONS.height}
             />
             <a className="mobile-header__phone-number" href="tel:+79193151000">
               +7 (919) 315-10-00
@@ -56,13 +69,25 @@ const MobileHeader: FC = () => {
         </div>
         <div className="mobile-header__emails">
           <div className="mobile-header__email">
-            <img className="mobile-header__email-icon" src={iconEmailSrc} alt="Иконка email" />
+            <img
+              className="mobile-header__email-icon"
+              src={iconEmailSrc}
+              alt="Иконка email"
+              width={MOBILE_HEADER_CONTACT_ICON_DIMENSIONS.width}
+              height={MOBILE_HEADER_CONTACT_ICON_DIMENSIONS.height}
+            />
             <a className="mobile-header__email-address" href="mailto:gruz_74@mail.ru">
               gruz_74@mail.ru (отдел продаж)
             </a>
           </div>
           <div className="mobile-header__email">
-            <img className="mobile-header__email-icon" src={iconEmailSrc} alt="Иконка email" />
+            <img
+              className="mobile-header__email-icon"
+              src={iconEmailSrc}
+              alt="Иконка email"
+              width={MOBILE_HEADER_CONTACT_ICON_DIMENSIONS.width}
+              height={MOBILE_HEADER_CONTACT_ICON_DIMENSIONS.height}
+            />
             <a className="mobile-header__email-address" href="mailto:89193151000@mail.ru">
               89193151000@mail.ru (отдел закупок)
             </a>
@@ -71,7 +96,13 @@ const MobileHeader: FC = () => {
       </div>
       <div className="mobile-header__actions">
         <div className="mobile-header__action">
-          <img className="mobile-header__action-icon" src={iconPriceSrc} alt="Иконка прайс-листа" />
+          <img
+            className="mobile-header__action-icon"
+            src={iconPriceSrc}
+            alt="Иконка прайс-листа"
+            width={MOBILE_HEADER_PRICE_ICON_DIMENSIONS.width}
+            height={MOBILE_HEADER_PRICE_ICON_DIMENSIONS.height}
+          />
           <a
             className="mobile-header__action-link"
             href="https://drive.google.com/file/d/1YJSsE58Co4uEeVLHjXuhn4hRS_4h0usD/view?usp=sharing"
@@ -86,6 +117,8 @@ const MobileHeader: FC = () => {
             className="mobile-header__action-icon"
             src={iconRequestSrc}
             alt="Иконка отправки заявки"
+            width={MOBILE_HEADER_REQUEST_ICON_DIMENSIONS.width}
+            height={MOBILE_HEADER_REQUEST_ICON_DIMENSIONS.height}
           />
           <button className="mobile-header__action-button" onClick={handleRequestClick}>
             Отправить заявку
@@ -97,6 +130,8 @@ const MobileHeader: FC = () => {
             className="mobile-header__action-icon"
             src={iconCallSrc}
             alt="Иконка заказа звонка"
+            width={MOBILE_HEADER_CALL_ICON_DIMENSIONS.width}
+            height={MOBILE_HEADER_CALL_ICON_DIMENSIONS.height}
           />
           <button className="mobile-header__action-button" onClick={handleCallClick}>
             Заказать звонок

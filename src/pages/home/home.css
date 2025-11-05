@@ -134,10 +134,12 @@
 }
 
 .home__advantage-icon {
+  width: auto;
   height: 116px;
 }
 
 .home__offer-icon {
+  width: auto;
   height: 100px;
 }
 

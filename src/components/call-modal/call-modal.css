@@ -161,6 +161,7 @@
 
 .call-modal__failure-icon,
 .call-modal__success-icon {
+  width: auto;
   height: 170px;
 }
 
@@ -201,6 +202,7 @@
 
   .call-modal__close-icon {
     width: 12px;
+    height: auto;
   }
 
   .call-modal__header {

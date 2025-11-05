@@ -7,6 +7,8 @@ import { freezeScroll, unfreezeScroll } from "../../utils/scroll";
 import "./mobile-navigation.css";
 import mobileLogoSrc from "./mobile-logo.webp";
 
+const MOBILE_NAVIGATION_LOGO_DIMENSIONS = { width: 896, height: 224 };
+
 const MobileNavigation: FC = () => {
   const [isInputChecked, setInputChecked] = useState<boolean>(false);
 
@@ -51,7 +53,13 @@ const MobileNavigation: FC = () => {
             <div className={buttonClass}></div>
           </label>
         </div>
-        <img className="mobile-navigation__logo-image" src={mobileLogoSrc} alt="Логотип компании" />
+        <img
+          className="mobile-navigation__logo-image"
+          src={mobileLogoSrc}
+          alt="Логотип компании"
+          width={MOBILE_NAVIGATION_LOGO_DIMENSIONS.width}
+          height={MOBILE_NAVIGATION_LOGO_DIMENSIONS.height}
+        />
       </div>
       <ul className={menuClass}>
         <li className="mobile-navigation__menu-item">

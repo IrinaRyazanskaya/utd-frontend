@@ -10,6 +10,9 @@ import iconSuccessSrc from "./success-icon.svg";
 
 type RequestState = "unknown" | "pending" | "success" | "failure";
 
+const CALL_MODAL_STATE_ICON_DIMENSIONS = { width: 250, height: 250 };
+const CALL_MODAL_CLOSE_ICON_DIMENSIONS = { width: 16, height: 16 };
+
 type CallModalProps = {
   onClose: () => void;
 };
@@ -90,7 +93,13 @@ const CallModal: FC<CallModalProps> = ({ onClose }) => {
   const success = (
     <div className="call-modal__success">
       <p className="call-modal__success-text">Заявка отправлена</p>
-      <img className="call-modal__success-icon" src={iconSuccessSrc} alt="Галочка в круге" />
+      <img
+        className="call-modal__success-icon"
+        src={iconSuccessSrc}
+        alt="Галочка в круге"
+        width={CALL_MODAL_STATE_ICON_DIMENSIONS.width}
+        height={CALL_MODAL_STATE_ICON_DIMENSIONS.height}
+      />
       <p>Скоро мы с Вами свяжемся</p>
     </div>
   );
@@ -98,7 +107,13 @@ const CallModal: FC<CallModalProps> = ({ onClose }) => {
   const failure = (
     <div className="call-modal__failure">
       <p className="call-modal__failure-text">Что-то пошло не так</p>
-      <img className="call-modal__failure-icon" src={iconFailureSrc} alt="Грустный смайлик" />
+      <img
+        className="call-modal__failure-icon"
+        src={iconFailureSrc}
+        alt="Грустный смайлик"
+        width={CALL_MODAL_STATE_ICON_DIMENSIONS.width}
+        height={CALL_MODAL_STATE_ICON_DIMENSIONS.height}
+      />
       <p className="call-modal__failure-subtext">Не получилось отправить Вашу заявку</p>
       <button
         className="call-modal__failure-button"
@@ -128,7 +143,13 @@ const CallModal: FC<CallModalProps> = ({ onClose }) => {
       <div className="call-modal-blackout" />
       <div className="call-modal">
         <button className="call-modal__close-button" onClick={onClose}>
-          <img className="call-modal__close-icon" src={iconCrossSrc} alt="Иконка крестика" />
+          <img
+            className="call-modal__close-icon"
+            src={iconCrossSrc}
+            alt="Иконка крестика"
+            width={CALL_MODAL_CLOSE_ICON_DIMENSIONS.width}
+            height={CALL_MODAL_CLOSE_ICON_DIMENSIONS.height}
+          />
         </button>
         {content}
       </div>

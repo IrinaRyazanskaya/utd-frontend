@@ -6,6 +6,7 @@
 }
 
 .mobile-navigation__logo-image {
+  width: auto;
   height: 44px;
   margin: auto;
   padding: 3px;

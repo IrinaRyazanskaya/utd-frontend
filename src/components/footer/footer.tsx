@@ -13,6 +13,11 @@ import iconPlaceholderSrc from "./placeholder-icon.svg";
 import iconPriceSrc from "./price-icon.svg";
 import iconRequestSrc from "./request-icon.svg";
 
+const FOOTER_PRICE_ICON_DIMENSIONS = { width: 14, height: 16 };
+const FOOTER_REQUEST_ICON_DIMENSIONS = { width: 17, height: 16 };
+const FOOTER_CALL_ICON_DIMENSIONS = { width: 17, height: 16 };
+const FOOTER_CONTACT_ICON_DIMENSIONS = { width: 16, height: 16 };
+
 const Footer: FC = () => {
   const [isRequestModalOpen, setRequestModalOpen] = useState(false);
 
@@ -43,16 +48,34 @@ const Footer: FC = () => {
           target="_blank"
           rel="noreferrer"
         >
-          <img className="footer__action-icon" src={iconPriceSrc} alt="Иконка прайс-листа" />
+          <img
+            className="footer__action-icon"
+            src={iconPriceSrc}
+            alt="Иконка прайс-листа"
+            width={FOOTER_PRICE_ICON_DIMENSIONS.width}
+            height={FOOTER_PRICE_ICON_DIMENSIONS.height}
+          />
           <span className="footer__price-list">СМОТРЕТЬ ПРАЙС-ЛИСТ</span>
         </a>
         <button className="footer__action-button" onClick={handleRequestClick}>
-          <img className="footer__action-icon" src={iconRequestSrc} alt="Иконка отправки заявки" />
+          <img
+            className="footer__action-icon"
+            src={iconRequestSrc}
+            alt="Иконка отправки заявки"
+            width={FOOTER_REQUEST_ICON_DIMENSIONS.width}
+            height={FOOTER_REQUEST_ICON_DIMENSIONS.height}
+          />
           ОТПРАВИТЬ ЗАЯВКУ
         </button>
         {isRequestModalOpen && <RequestModal onClose={closeRequestModal} />}
         <button className="footer__action-button" onClick={handleCallClick}>
-          <img className="footer__action-icon" src={iconCallSrc} alt="Иконка заказа звонка" />
+          <img
+            className="footer__action-icon"
+            src={iconCallSrc}
+            alt="Иконка заказа звонка"
+            width={FOOTER_CALL_ICON_DIMENSIONS.width}
+            height={FOOTER_CALL_ICON_DIMENSIONS.height}
+          />
           ЗАКАЗАТЬ ЗВОНОК
         </button>
         {isCallModalOpen && <CallModal onClose={closeCallModal} />}
@@ -81,7 +104,13 @@ const Footer: FC = () => {
       </div>
       <div className="footer__contacts">
         <div className="footer__phones">
-          <img className="footer__phones-icon" src={iconPhoneSrc} alt="Иконка телефоноа" />
+          <img
+            className="footer__phones-icon"
+            src={iconPhoneSrc}
+            alt="Иконка телефоноа"
+            width={FOOTER_CONTACT_ICON_DIMENSIONS.width}
+            height={FOOTER_CONTACT_ICON_DIMENSIONS.height}
+          />
           <div className="footer__phone-numbers">
             <a className="footer__phone-number" href="tel:+73513264004">
               +7 (3513) 264-004
@@ -92,7 +121,13 @@ const Footer: FC = () => {
           </div>
         </div>
         <div className="footer__emails">
-          <img className="footer__emails-icon" src={iconEmailSrc} alt="Иконка email" />
+          <img
+            className="footer__emails-icon"
+            src={iconEmailSrc}
+            alt="Иконка email"
+            width={FOOTER_CONTACT_ICON_DIMENSIONS.width}
+            height={FOOTER_CONTACT_ICON_DIMENSIONS.height}
+          />
           <div className="footer__email-addresses">
             <a className="footer__email-address" href="mailto:gruz_74@mail.ru">
               gruz_74@mail.ru
@@ -109,6 +144,8 @@ const Footer: FC = () => {
             className="footer__placeholder-icon"
             src={iconPlaceholderSrc}
             alt="Иконка места на карте"
+            width={FOOTER_CONTACT_ICON_DIMENSIONS.width}
+            height={FOOTER_CONTACT_ICON_DIMENSIONS.height}
           />
           <div className="footer__address">
             <address className="footer__address-text">
