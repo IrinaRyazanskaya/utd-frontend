@@ -1,92 +1,69 @@
 import type { FC } from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
+import type { Map, Marker } from "leaflet";
 
-import "leaflet/dist/leaflet.css";
-import markerIcon from "leaflet/dist/images/marker-icon.png";
-import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
-import markerShadow from "leaflet/dist/images/marker-shadow.png";
+import "./dynamic-map.css";
+import iconUrl from "./images/marker-icon.png";
+import iconRetinaUrl from "./images/marker-icon-2x.png";
+import shadowUrl from "./images/marker-shadow.png";
 
-const tileUrlPattern = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
+const MAP_ZOOM = 15;
+const TILE_URL = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
 
 type DynamicMapProps = {
   center: [number, number];
   markerPosition: [number, number];
 };
 
-type ReactLeafletExports = Pick<
-  typeof import("react-leaflet"),
-  "MapContainer" | "Marker" | "TileLayer" | "ZoomControl"
->;
-
 const DynamicMap: FC<DynamicMapProps> = ({ center, markerPosition }) => {
-  const [leafletComponents, setLeafletComponents] = useState<ReactLeafletExports | null>(null);
+  const mapContainerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    let isMounted = true;
+    let cancelled = false;
 
-    const loadLeaflet = async () => {
-      const [leaflet, reactLeaflet] = await Promise.all([
-        import("leaflet"),
-        import("react-leaflet"),
-      ]);
+    let map: Map | null = null;
+    let marker: Marker | null = null;
 
-      const { MapContainer, Marker, TileLayer, ZoomControl } = reactLeaflet;
+    (async () => {
+      const [leaflet] = await Promise.all([import("leaflet"), import("leaflet/dist/leaflet.css")]);
+
+      if (!mapContainerRef.current || cancelled) {
+        return;
+      }
 
       // @ts-expect-error Исправление иконок маркеров
       delete leaflet.Icon.Default.prototype._getIconUrl;
 
       leaflet.Icon.Default.mergeOptions({
+        iconUrl,
+        shadowUrl,
+        iconRetinaUrl,
         iconSize: [25, 41],
         iconAnchor: [12, 41],
         shadowSize: [41, 41],
         popupAnchor: [1, -34],
-
-        iconUrl: markerIcon,
-        shadowUrl: markerShadow,
-        iconRetinaUrl: markerIcon2x,
       });
 
-      if (!isMounted) {
-        return;
-      }
-
-      setLeafletComponents({
-        MapContainer,
-        Marker,
-        TileLayer,
-        ZoomControl,
-      });
-    };
-
-    if (typeof window !== "undefined") {
-      void loadLeaflet();
-    }
+      map = leaflet.map(mapContainerRef.current).setView(center, MAP_ZOOM);
+      map.attributionControl.remove();
+      leaflet.tileLayer(TILE_URL).addTo(map);
+      marker = leaflet.marker(markerPosition).addTo(map);
+    })();
 
     return () => {
-      isMounted = false;
+      cancelled = true;
+
+      if (marker) {
+        marker.remove();
+      }
+
+      if (map) {
+        map.remove();
+      }
     };
-  }, []);
+  }, [center, markerPosition]);
 
-  if (!leafletComponents) {
-    return null;
-  }
-
-  const { MapContainer, Marker, TileLayer, ZoomControl } = leafletComponents;
-
-  return (
-    <MapContainer
-      zoom={16}
-      center={center}
-      zoomControl={false}
-      scrollWheelZoom={true}
-      attributionControl={false}
-      style={{ width: "100%", height: "100%" }}
-    >
-      <TileLayer url={tileUrlPattern} maxZoom={19} />
-      <Marker position={markerPosition} />
-      <ZoomControl position="topright" />
-    </MapContainer>
-  );
+  return <div ref={mapContainerRef} className="dynamic_map" />;
 };
 
 DynamicMap.displayName = "DynamicMap";

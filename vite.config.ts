@@ -3,6 +3,8 @@ import { defineConfig } from "vite";
 import { compression } from "vite-plugin-compression2";
 
 export default defineConfig(({ isSsrBuild }) => ({
+  assetsInclude: ["**/*.docx"],
+
   plugins: [
     react(),
     isSsrBuild
@@ -11,12 +13,18 @@ export default defineConfig(({ isSsrBuild }) => ({
           algorithms: ["brotli"],
         }),
   ].filter(Boolean),
-  assetsInclude: ["**/*.docx"],
+
   build: {
     outDir: isSsrBuild ? "dist/server" : "dist/client",
     rollupOptions: {
       output: {
         manualChunks: splitChunks,
+      },
+    },
+    modulePreload: {
+      polyfill: false,
+      resolveDependencies(_filename, deps) {
+        return deps.filter((dep) => !dep.includes("leaflet"));
       },
     },
   },

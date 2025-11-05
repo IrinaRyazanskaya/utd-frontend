@@ -1,14 +1,10 @@
 import type { FC } from "react";
-import { Suspense, lazy } from "react";
+
+import { DynamicMap } from "../../components/dynamic-map";
 
 import "./contacts.css";
 
 const officeLocation: [number, number] = [55.10139, 60.1344];
-
-const DynamicMap = lazy(async () => {
-  const { DynamicMap } = await import("../../components/dynamic-map");
-  return { default: DynamicMap };
-});
 
 const Contacts: FC = () => {
   return (
@@ -63,9 +59,7 @@ const Contacts: FC = () => {
       </div>
       <strong className="contacts__label-map">Схема проезда</strong>
       <div className="contacts__map-container">
-        <Suspense fallback={<div className="contacts__map-loader">Загружаем карту...</div>}>
-          <DynamicMap center={officeLocation} markerPosition={officeLocation} />
-        </Suspense>
+        <DynamicMap center={officeLocation} markerPosition={officeLocation} />
       </div>
     </article>
   );
