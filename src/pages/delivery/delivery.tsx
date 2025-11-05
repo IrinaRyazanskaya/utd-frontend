@@ -61,8 +61,8 @@ const Delivery: FC = () => {
             height={DELIVERY_FACT_ICON_DIMENSIONS.height}
           />
           <p className="delivery__advantages">
-            Транспортный сбор в размере 300 рублей распостраняется только на заказы с суммой покупки
-            менее 1 500 рублей
+            Транспортный сбор в размере 300 рублей распространяется только на заказы с суммой
+            покупки менее 1 500 рублей
           </p>
         </div>
         <div className="delivery__fact-card">

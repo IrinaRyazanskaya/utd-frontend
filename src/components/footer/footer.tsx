@@ -107,7 +107,7 @@ const Footer: FC = () => {
           <img
             className="footer__phones-icon"
             src={iconPhoneSrc}
-            alt="Иконка телефоноа"
+            alt="Иконка телефона"
             width={FOOTER_CONTACT_ICON_DIMENSIONS.width}
             height={FOOTER_CONTACT_ICON_DIMENSIONS.height}
           />
