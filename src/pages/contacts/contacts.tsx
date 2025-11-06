@@ -1,4 +1,4 @@
-import type { FC } from "react";
+import { type FC, useRef } from "react";
 
 import { DynamicMap } from "../../components/dynamic-map";
 
@@ -7,6 +7,8 @@ import "./contacts.css";
 const officeLocation: [number, number] = [55.10139, 60.1344];
 
 const Contacts: FC = () => {
+  const mapContainerRef = useRef<HTMLDivElement | null>(null);
+
   return (
     <article className="contacts">
       <h2 className="contacts__header">Контакты компании ООО&nbsp;ТД&nbsp;«УралТехДеталь»</h2>
@@ -58,8 +60,13 @@ const Contacts: FC = () => {
         </ul>
       </div>
       <strong className="contacts__label-map">Схема проезда</strong>
-      <div className="contacts__map-container">
-        <DynamicMap center={officeLocation} markerPosition={officeLocation} />
+      <div ref={mapContainerRef} className="contacts__map-container">
+        <DynamicMap
+          center={officeLocation}
+          markerPosition={officeLocation}
+          mapContainerRef={mapContainerRef}
+          visibleClassName="contacts__map-container_visible"
+        />
       </div>
     </article>
   );

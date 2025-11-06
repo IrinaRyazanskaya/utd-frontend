@@ -50,6 +50,15 @@
   width: 650px;
   height: 450px;
   margin-top: 20px;
+
+  opacity: 0;
+  background-color: #f3f3f3;
+
+  transition: opacity 1000ms ease-out;
+}
+
+.contacts__map-container_visible {
+  opacity: 1;
 }
 
 @media (width <= 767px) {
